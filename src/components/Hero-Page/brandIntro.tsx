@@ -11,7 +11,7 @@ export default function BrandIntroduction() {
         {/* LEFT CONTENT */}
         <div>
             <Image
-          src="/brandLogoGray.png"
+          src="/Hero-Page-Images/brandLogoGray.png"
           alt="ARGM watermark"
           width={500}
           height={300}
@@ -39,7 +39,7 @@ export default function BrandIntroduction() {
   {/* MAIN LEFT IMAGE (TALL) */}
   <div className="absolute left-0 top-6 z-10 rounded-[32px] overflow-hidden">
     <Image
-      src="/introImage/introMain.png"
+      src="/Hero-Page-Images/introImage/introMain.png"
       alt="Interior design"
       width={280}
       height={400}
@@ -50,7 +50,7 @@ export default function BrandIntroduction() {
   {/* TOP RIGHT IMAGE (SQUARE) */}
   <div className="absolute top-0 right-0 z-20 rounded-[24px] overflow-hidden shadow-lg">
     <Image
-      src="/introImage/introTop.png"
+      src="/Hero-Page-Images/introImage/introTop.png"
       alt="Chair design"
       width={180}
       height={180}
@@ -61,7 +61,7 @@ export default function BrandIntroduction() {
   {/* BOTTOM RIGHT IMAGE (WIDE WITH WHITE BORDER) */}
   <div className="absolute bottom-0 right-6 z-20 bg-white p-2 rounded-[28px] shadow-lg">
     <Image
-      src="/introImage/introBottom.png"
+      src="/Hero-Page-Images/introImage/introBottom.png"
       alt="Table design"
       width={260}
       height={150}

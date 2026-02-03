@@ -6,22 +6,22 @@ export default function Process() {
         {
             title: "Briefing",
             desc: "It begins with a deep dive to understand the client's dreams, functional requirements, and aesthetic preferences.",
-            icon: "/icons/briefing.png",
+            icon: "/Hero-Page-Images/icons/briefing.png",
         },
         {
             title: "Design",
             desc: "We translate concepts into detailed designs, from initial drafts to precise models.",
-            icon: "/icons/design.png",
+            icon: "/Hero-Page-Images/icons/design.png",
         },
         {
             title: "Execution",
             desc: "Our designs materialize through expert craftsmanship, ensuring structure to finishing touches.",
-            icon: "/icons/execution.png",
+            icon: "/Hero-Page-Images/icons/execution.png",
         },
         {
             title: "Handover",
             desc: "The grand unveiling—clients experience the transformed environment, fully completed.",
-            icon: "/icons/handover.png",
+            icon: "/Hero-Page-Images/icons/handover.png",
         },
     ];
 

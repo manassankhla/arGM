@@ -43,7 +43,7 @@ export default function Award() {
         <div className="w-[360px] shrink-0">
           <div className="rounded-[32px] overflow-hidden shadow-2xl">
             <Image
-              src="/awards/award1.png"
+              src="/Hero-Page-Images/awards/award1.png"
               alt="Award 1"
               width={400}
               height={520}
@@ -61,7 +61,7 @@ export default function Award() {
         <div className="w-[360px] shrink-0">
           <div className="rounded-[32px] overflow-hidden shadow-2xl">
             <Image
-              src="/awards/award2.png"
+              src="/Hero-Page-Images/awards/award2.png"
               alt="Award 2"
               width={400}
               height={520}

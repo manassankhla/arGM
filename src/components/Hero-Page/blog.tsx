@@ -6,17 +6,17 @@ export default function Blogs() {
     {
       title: "The Art of Subtraction: Minimalist Design",
       date: "12/01/2024",
-      image: "/blogs/blog1.png",
+      image: "/Hero-Page-Images/blogs/blog1.png",
     },
     {
       title: "Unleashing Imagination: Creative Architecture",
       date: "11/15/2024",
-      image: "/blogs/blog2.png",
+      image: "/Hero-Page-Images/blogs/blog2.png",
     },
     {
       title: "Building a Greener Future: Sustainable Design",
       date: "10/22/2024",
-      image: "/blogs/blog3.png",
+      image: "/Hero-Page-Images/blogs/blog3.png",
     },
   ];
 

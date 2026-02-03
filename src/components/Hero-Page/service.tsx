@@ -4,62 +4,62 @@ const services = [
   {
     title: "Architecture Design",
     desc: "Context-driven architectural solutions that balance form and function.",
-    image: "/serviceImage/service1.png",
+    image: "/Hero-Page-Images/serviceImage/service1.png",
   },
   {
     title: "Interior Design",
     desc: "Thoughtfully crafted interiors focused on comfort and harmony.",
-    image: "/serviceImage/service2.png",
+    image: "/Hero-Page-Images/serviceImage/service2.png",
   },
   {
     title: "Residential Projects",
     desc: "Tailored solutions shaped around lifestyle and purpose.",
-    image: "/serviceImage/service3.png",
+    image: "/Hero-Page-Images/serviceImage/service3.png",
   },
   {
     title: "Execution & Build",
     desc: "Seamless execution with quality and precision.",
-    image: "/serviceImage/service4.png",
+    image: "/Hero-Page-Images/serviceImage/service4.png",
   },
   {
     title: "Residential Projects",
     desc: "Tailored solutions shaped around lifestyle and purpose.",
-    image: "/serviceImage/service3.png",
+    image: "/Hero-Page-Images/serviceImage/service3.png",
   },
   {
     title: "Execution & Build",
     desc: "Seamless execution with quality and precision.",
-    image: "/serviceImage/service4.png",
+    image: "/Hero-Page-Images/serviceImage/service4.png",
   },
    {
     title: "Execution & Build",
     desc: "Seamless execution with quality and precision.",
-    image: "/serviceImage/service4.png",
+    image: "/Hero-Page-Images/serviceImage/service4.png",
   },
   {
     title: "Residential Projects",
     desc: "Tailored solutions shaped around lifestyle and purpose.",
-    image: "/serviceImage/service3.png",
+    image: "/Hero-Page-Images/serviceImage/service3.png",
   },
   {
     title: "Execution & Build",
     desc: "Seamless execution with quality and precision.",
-    image: "/serviceImage/service4.png",
+    image: "/Hero-Page-Images/serviceImage/service4.png",
   },
    {
     title: "Execution & Build",
     desc: "Seamless execution with quality and precision.",
-    image: "/serviceImage/service4.png",
+    image: "/Hero-Page-Images/serviceImage/service4.png",
   },
   {
     title: "Residential Projects",
     desc: "Tailored solutions shaped around lifestyle and purpose.",
-    image: "/serviceImage/service3.png",
+    image: "/Hero-Page-Images/serviceImage/service3.png",
   },
   {
     title: "Execution & Build",
     desc: "Seamless execution with quality and precision.",
-    image: "/serviceImage/service4.png",
+    image: "/Hero-Page-Images/serviceImage/service4.png",
   },
   // 👇 add as many as you want
 ];

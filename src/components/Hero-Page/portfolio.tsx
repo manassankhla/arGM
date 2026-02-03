@@ -5,22 +5,22 @@ export default function Portfolio() {
     {
       title: "Elegance and Minimalism",
       location: "MUMBAI, MAHARASHTRA",
-      image: "/portfolio/img1.png",
+      image: "/Hero-Page-Images/portfolio/img1.png",
     },
     {
       title: "Innovation and Creativity",
       location: "BENGALURU, KARNATAKA",
-      image: "/portfolio/img2.png",
+      image: "/Hero-Page-Images/portfolio/img2.png",
     },
     {
       title: "Aqua Vista Tower",
       location: "CHENNAI, TAMIL NADU",
-      image: "/portfolio/img3.png",
+      image: "/Hero-Page-Images/portfolio/img3.png",
     },
     {
       title: "EcoTech Hub",
       location: "HYDERABAD, TELANGANA",
-      image: "/portfolio/img4.png",
+      image: "/Hero-Page-Images/portfolio/img4.png",
     },
   ];
 

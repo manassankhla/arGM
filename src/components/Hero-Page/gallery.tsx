@@ -3,15 +3,15 @@ import Container from "@/components/container";
 
 export default function Gallery() {
   const images = [
-    { src: "/gallery/gallery1.png", tall: false }, //1
-    { src: "/gallery/gallery2.png", tall: true }, //2
-    { src: "/gallery/gallery3.png", tall: false }, //3
-    { src: "/gallery/gallery4.png", tall: true }, //4
-    { src: "/gallery/gallery5.png", tall: true }, //5
-    { src: "/gallery/gallery6.png", tall: false }, //6
-    { src: "/gallery/gallery7.png", tall: false }, //7
-    { src: "/gallery/gallery8.png", tall: false }, //8
-    { src: "/gallery/gallery2.png", tall: false }, //9
+    { src: "/Hero-Page-Images/gallery/gallery1.png", tall: false }, //1
+    { src: "/Hero-Page-Images/gallery/gallery2.png", tall: true }, //2
+    { src: "/Hero-Page-Images/gallery/gallery3.png", tall: false }, //3
+    { src: "/Hero-Page-Images/gallery/gallery4.png", tall: true }, //4
+    { src: "/Hero-Page-Images/gallery/gallery5.png", tall: true }, //5
+    { src: "/Hero-Page-Images/gallery/gallery6.png", tall: false }, //6
+    { src: "/Hero-Page-Images/gallery/gallery7.png", tall: false }, //7
+    { src: "/Hero-Page-Images/gallery/gallery8.png", tall: false }, //8
+    { src: "/Hero-Page-Images/gallery/gallery2.png", tall: false }, //9
   ];
 
   return (

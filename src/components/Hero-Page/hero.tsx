@@ -13,7 +13,7 @@ export default function Hero() {
       sm:[clip-path:polygon(0_0,100%_0,100%_80%,50%_100%,0_80%)]">
 
                 <Image
-                    src="/hero.png"
+                    src="/Hero-Page-Images/hero.png"
                     alt="Architecture"
                     fill
                     priority
