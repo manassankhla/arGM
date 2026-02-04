@@ -73,8 +73,11 @@ export default function Award() {
             Zenith Awards: Excellence in Spatial Design
           </p>
         </div>
+        
 
       </div>
+      
+      
 
     </section>
   );

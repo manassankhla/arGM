@@ -112,6 +112,80 @@ export default function AboutPage() {
 
         </div>
       </div>
+      {/* ================= BOTTOM INFO SECTION (DOTTED BG) ================= */}
+<section
+  className="py-28 relative"
+  style={{
+    backgroundImage: "radial-gradient(#d1d5db 1px, transparent 1px)",
+    backgroundSize: "22px 22px",
+  }}
+>
+  <div className="max-w-7xl mx-auto px-6 space-y-28">
+
+    {/* ===== Row 1 ===== */}
+    <div className="grid md:grid-cols-2 gap-16 items-center">
+
+      {/* Text */}
+      <div>
+        <h3 className="text-2xl font-semibold mb-5">
+          The Creative Vision
+        </h3>
+
+        <p className="text-gray-600 leading-relaxed">
+          Main ek UI/UX aur Brand Designer hoon jo digital products ko sirf
+          beautiful nahi, balki functional banata hoon. Mere liye design ka
+          matlab sirf layout design karna nahi, balki user experience create
+          karna hai jo users ke liye intuitive aur seamless rahe.
+        </p>
+      </div>
+
+      {/* Image */}
+      <div className="rounded-2xl overflow-hidden shadow-lg">
+        <Image
+          src="/Hero-Page-Images/awards/award1.png"
+          alt="vision"
+          width={600}
+          height={400}
+          className="object-cover w-full h-[260px]"
+        />
+      </div>
+
+    </div>
+
+
+
+    {/* ===== Row 2 ===== */}
+    <div className="grid md:grid-cols-2 gap-16 items-center">
+
+      {/* Image first on desktop */}
+      <div className="order-2 md:order-1 rounded-2xl overflow-hidden shadow-lg">
+        <Image
+          src="/Hero-Page-Images/awards/award2.png"
+          alt="strategy"
+          width={600}
+          height={400}
+          className="object-cover w-full h-[260px]"
+        />
+      </div>
+
+      {/* Text */}
+      <div className="order-1 md:order-2">
+        <h3 className="text-2xl font-semibold mb-5">
+          Strategic Branding & Impact
+        </h3>
+
+        <p className="text-gray-600 leading-relaxed">
+          Brand identity sirf ek logo nahi, balki ek vishwas hai. Maine 15+
+          saal ke experience ke saath 280+ projects deliver kiye hain. Har
+          approach research-driven aur result-focused hoti hai.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
 
     </section>
   );

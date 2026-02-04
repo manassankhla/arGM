@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+
 
 export default function NavbarMenu() {
   const [open, setOpen] = useState(false);
@@ -54,30 +56,34 @@ export default function NavbarMenu() {
         <div className="relative min-h-screen flex flex-col md:flex-row py-20">
 
           {/* ================= LEFT MENU ================= */}
-          <div className="w-full md:w-1/2 flex items-center justify-start px-8 md:px-20">
-            <div className="text-left space-y-5 text-2xl md:text-3xl text-yellow-600 font-light tracking-wide">
+<div className="w-full md:w-1/2 flex items-center justify-start px-8 md:px-20">
 
-              {[
-                "About Us",
-                "Projects",
-                "Team Page",
-                "Career",
-                "T&C Page",
-                "Privacy Policy",
-                "Awards & Events",
-                "Blogs",
-                "Contact Us",
-              ].map((item) => (
-                <p
-                  key={item}
-                  className="cursor-pointer hover:text-white transition"
-                >
-                  {item}
-                </p>
-              ))}
+  <div className="text-left space-y-5 text-2xl md:text-3xl text-yellow-600 font-light tracking-wide">
 
-            </div>
-          </div>
+    {[
+      { name: "About Us", path: "/about" },
+      { name: "Projects", path: "/projects" },
+      { name: "Team Page", path: "/team" },
+      { name: "Career", path: "/career" },
+      { name: "T&C Page", path: "/terms-and-conditions" },
+      { name: "Privacy Policy", path: "/privacy-policy" },
+      { name: "Awards & Events", path: "/awards" },
+      { name: "Blogs", path: "/blog" },
+      { name: "Contact Us", path: "/contact" },
+    ].map((item) => (
+      <Link
+        key={item.name}
+        href={item.path}
+        onClick={() => setOpen(false)}
+        className="block cursor-pointer hover:text-white transition"
+      >
+        {item.name}
+      </Link>
+    ))}
+
+  </div>
+</div>
+
 
 
 
