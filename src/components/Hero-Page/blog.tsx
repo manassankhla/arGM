@@ -22,59 +22,97 @@ export default function Blogs() {
 
   return (
     <Container>
-    <section className="bg-white py-28">
-      <div className="mx-auto px-6">
+      <section className="bg-white py-32">
 
-        {/* ===== Heading ===== */}
-        <div className="text-center mx-auto mb-20">
-          <h2 className="font-heading italic text-4xl mb-4">
-            Blogs & Articles
-          </h2>
-          <p className="text-sm text-gray-500 leading-relaxed">
-            Through our blogs and articles, we share insights on architecture,
-            interior design, materials, spatial planning, and evolving design trends.
-          </p>
-        </div>
+        <div className="mx-auto px-6">
 
-        {/* ===== Blog Cards ===== */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-20">
-          {blogs.map((blog, i) => (
-            <div key={i} className="group">
+          {/* ================= Heading ================= */}
+          <div className="text-center max-w-3xl mx-auto mb-24">
+            <h2 className="font-heading text-[74px] italic text-5xl mb-5">
+              Blogs & Articles
+            </h2>
 
-              {/* Image */}
-              <div className="relative rounded-[28px] overflow-hidden mb-6">
-                <Image
-                  src={blog.image}
-                  alt={blog.title}
-                  width={500}
-                  height={400}
-                  className="object-cover w-full h-[360px] group-hover:scale-105 transition-transform duration-500"
-                />
+            <p className="text-gray-500 text-[18px] leading-relaxed text-sm">
+              Through our blogs and articles, we share insights on architecture,
+              interior design, materials, spatial planning, and evolving design
+              trends.
+            </p>
+          </div>
+
+
+
+          {/* ================= Blog Cards ================= */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-24">
+
+            {blogs.map((blog, i) => (
+              <div key={i} className="group cursor-pointer">
+
+                {/* Image (FIXED PROPER WAY) */}
+                <div className="relative h-[480px] rounded-[32px] overflow-hidden mb-7 shadow-md">
+
+                  <Image
+                    src={blog.image}
+                    alt={blog.title}
+                    fill
+                    className="
+                      object-cover
+                      transition-transform duration-500
+                      group-hover:scale-110
+                    "
+                  />
+
+                </div>
+
+
+
+                {/* Title */}
+                <h3 className="font-heading italic text-xl leading-snug mb-2">
+                  {blog.title}
+                </h3>
+
+
+
+                {/* Date */}
+                <p className="text-sm text-gray-400">
+                  Published: {blog.date}
+                </p>
+
               </div>
+            ))}
 
-              {/* Title */}
-              <h3 className="font-heading italic text-lg mb-2">
-                {blog.title}
-              </h3>
+          </div>
 
-              {/* Date */}
-              <p className="text-xs text-gray-400">
-                Published: {blog.date}
-              </p>
-            </div>
-          ))}
+
+
+          {/* ================= Button ================= */}
+          {/* Button */}
+          <div className="flex justify-center mt-10 mb-5">
+            <button
+              className="
+      inline-flex items-center
+      h-[64px]
+      px-[36px] py-[20px]
+      gap-2
+      rounded-[100px]
+      bg-black text-white
+      border border-black
+      text-sm
+      transition-all duration-300
+      hover:bg-white hover:text-black
+      group
+    "
+            >
+              Explore More
+              {/* Arrow */}
+              <span className="transition-transform duration-300 group-hover:rotate-45">
+                ↗
+              </span>
+            </button>
+          </div>
+
         </div>
 
-        {/* ===== Button ===== */}
-        <div className="flex justify-center">
-          <button className="flex items-center gap-2 bg-black text-white text-sm px-6 py-3 rounded-full hover:bg-gray-900 transition">
-            Explore More
-            <span className="text-lg">↗</span>
-          </button>
-        </div>
-
-      </div>
-    </section>
+      </section>
     </Container>
   );
 }

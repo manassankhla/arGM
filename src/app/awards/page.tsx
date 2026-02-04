@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import Container from "@/components/container";
 export default function AwardsPage() {
 
   const awards = [
@@ -12,6 +12,7 @@ export default function AwardsPage() {
   ];
 
   return (
+    
     <main className="bg-white text-black">
 
       {/* ================= HERO (same like blog) ================= */}
@@ -35,9 +36,9 @@ export default function AwardsPage() {
         </div>
       </section>
 
-
+<Container>
       {/* ================= AWARDS GRID ================= */}
-      <section className="max-w-7xl mx-auto px-6 py-24">
+      <section className=" mx-auto px-6 py-24">
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
 
@@ -88,6 +89,7 @@ export default function AwardsPage() {
         </div>
 
       </section>
+      </Container>
     </main>
   );
 }

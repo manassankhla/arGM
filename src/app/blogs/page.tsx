@@ -1,9 +1,9 @@
 import Image from "next/image";
-
+import Container from "@/components/container";
 export default function BlogPage() {
   const posts = [
     {
-      image: "/Blog-Page-Images/blog.jpg",
+      image: "/Blog-Page-Images/Blog.jpg",
       title:
         "What Your Analytics are Trying to Tell You About Your Business ACTUAL Results",
       desc:
@@ -11,7 +11,7 @@ export default function BlogPage() {
       category: "Analytics",
     },
     {
-      image: "/Blog-Page-Images/blog.jpg",
+      image: "/Blog-Page-Images/Blog.jpg",
       title:
         "Common Copywriting Mistakes that are Making Your Ideal Customers Click Away",
       desc:
@@ -19,7 +19,7 @@ export default function BlogPage() {
       category: "Copywriting",
     },
     {
-      image: "/Blog-Page-Images/blog.jpg",
+      image: "/Blog-Page-Images/Blog.jpg",
       title:
         "5 IG Stories Strategies to Boost Your Social Media Engagement",
       desc:
@@ -29,20 +29,21 @@ export default function BlogPage() {
   ];
 
   return (
+    
     <main className="bg-white text-black">
 
       {/* ================= HERO ================= */}
       <section className="relative h-[65vh] font-heading italic flex items-center justify-center text-center bg-white text-black">
 
         <Image
-          src="/Blog-Page-Images/blog.jpg"
+          src="/Blog-Page-Images/Blog.jpg"
           alt="blog hero"
           fill
-          className="object-cover opacity-40 rounded-b-4xl"
+          className="object-cover"
         />
 
         <div className="relative z-10 px-6">
-          <h1 className="text-6xl md:text-7xl font-serif tracking-wide mb-6">
+          <h1 className="text-6xl text-black md:text-7xl font-serif tracking-wide mb-6">
             THE BLOG
           </h1>
 
@@ -55,8 +56,8 @@ export default function BlogPage() {
       </section>
 
       {/* ================= CATEGORY NAV ================= */}
-      <section className="border-b">
-        <div className="max-w-6xl mx-auto px-6 py-6 flex flex-wrap items-center justify-center gap-10 text-sm tracking-wide uppercase text-gray-600">
+      <section>
+        <div className="max-w-6xl mx-auto px-6 py-15 flex flex-wrap items-center justify-center gap-10 text-sm tracking-wide uppercase text-gray-600">
 
           <span className="italic text-black font-medium">
             Browse the blog :
@@ -71,7 +72,8 @@ export default function BlogPage() {
       </section>
 
       {/* ================= FEATURED POST ================= */}
-      <section className="max-w-6xl mx-auto px-6 py-20">
+      <Container>
+      <section className=" mx-auto px-6 py-15 pt-2">
 
         <div className="grid md:grid-cols-2 gap-10 items-center">
 
@@ -84,7 +86,7 @@ export default function BlogPage() {
             />
           </div>
 
-          <div className="bg-[#f5f5f5] p-10">
+          <div className="bg-[#f5f5f5] py-18 p-10 rounded-lg">
             <h2 className="text-3xl font-serif mb-6 leading-snug">
               DREADING TAX SEASON? THESE STRATEGIES WILL HELP YOU PREPARE EARLY
             </h2>
@@ -104,7 +106,8 @@ export default function BlogPage() {
       </section>
 
       {/* ================= BLOG GRID ================= */}
-      <section className="max-w-6xl mx-auto px-6 pb-24">
+     
+      <section className="mx-auto px-6 pb-24">
 
         <div className="grid md:grid-cols-3 gap-12">
 
@@ -140,7 +143,9 @@ export default function BlogPage() {
 
         </div>
       </section>
+      </Container>
 
     </main>
+    
   );
 }

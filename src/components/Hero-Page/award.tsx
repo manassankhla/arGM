@@ -23,7 +23,7 @@ export default function Award() {
       {/* ================= LEFT TEXT (CENTERED INSIDE STRIP) ================= */}
       <div className="relative z-20 pl-[8vw] h-[240px] flex flex-col justify-center max-w-xl text-white">
 
-        <h2 className="italic text-6xl font-light mb-6">
+        <h2 className="italic text-[74px] font-light mb-6">
           Awards / Insights
         </h2>
 

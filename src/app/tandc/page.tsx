@@ -8,7 +8,7 @@ export default function TermsAndConditions() {
 
         {/* Title */}
         <h1 className="text-5xl font-heading italic font-semibold tracking-tight mb-6">
-          Privacy Policy
+          Terms & Conditions
         </h1>
 
         <p className="text-gray-500 mb-16">

@@ -34,8 +34,8 @@ export default function Process() {
 
                 {/* Heading */}
                 <div className="text-center mx-auto mb-16">
-                    <h2 className="font-heading italic text-black text-[42px] leading-tight mb-5">Our Process</h2>
-                    <p className="text-sm text-gray-500 leading-relaxed">
+                    <h2 className="font-heading italic text-black text-[74px] leading-tight mb-5">Our Process</h2>
+                    <p className="font-body text-[18px] text-gray-500 leading-relaxed">
                         Our process is rooted in collaboration and innovation. From initial sketches to final walkthroughs, we focus on creating spaces that resonate with purpose and elegance. Every step is a fusion of creativity and precision.
                     </p>
                 </div>

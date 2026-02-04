@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 export default function Hero() {
@@ -32,20 +34,32 @@ export default function Hero() {
                     </p>
                 </div>
 
-               {/* SCROLL ICON — FIGMA PERFECT */}
-<div className="absolute left-1/2 bottom-0 -translate-x-1/2 z-50">
-  <div className="relative translate-y-[-50%]">
-    <div
-      className="w-12 h-16 rounded-full bg-black text-white
-                 flex items-center justify-center
-                 border border-white/60 shadow-lg animate-bounce">
-      ↓
-    </div>
-  </div>
-</div>
 
 
-
+            </div>
+            <div className="absolute left-1/2 bottom-0 -translate-x-1/2 z-50">
+                <button
+                    onClick={() => {
+                        const element = document.getElementById('brand-intro');
+                        element?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="relative translate-y-[50%] group cursor-pointer"
+                    aria-label="Scroll to Brand Introduction"
+                >
+                    <div
+                        className="w-[60px] h-[80px] rounded-full bg-black
+                                     flex items-center justify-center
+                                     border-[3px] border-white shadow-2xl
+                                     transition-transform duration-300 ease-out
+                                     group-hover:scale-105 group-hover:-translate-y-1">
+                        <span className="text-white animate-bounce">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M12 5v14" />
+                                <path d="M19 12l-7 7-7-7" />
+                            </svg>
+                        </span>
+                    </div>
+                </button>
             </div>
         </section>
     );

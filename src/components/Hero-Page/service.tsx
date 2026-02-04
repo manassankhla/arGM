@@ -66,12 +66,13 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-28 bg-white overflow-hidden">
+    
+    <section className="py-15 bg-white overflow-hidden">
 
       {/* Heading */}
       <div className="text-center max-w-3xl mx-auto mb-16 px-6">
-        <h2 className="font-heading italic text-black text-[42px] mb-4">Services</h2>
-        <p className="text-gray-500 text-sm">
+        <h2 className="font-heading italic text-black text-[74px] mb-4">Services</h2>
+        <p className="font-body text-[18px] text-gray-500 text-sm">
           We offer end-to-end architectural and design solutions.
         </p>
       </div>
@@ -88,16 +89,16 @@ export default function Services() {
             <div
               key={index}
               className="flex-shrink-0
-                         w-[320px]
+                         w-[460px]
                          snap-center
                          border border-dashed border-gray-300
-                         rounded-[28px] p-6 bg-white scrollbar-hide"
+                         rounded-[28px] p-5 bg-white scrollbar-hide"
             >
               <div className="rounded-[22px] overflow-hidden mb-6">
                 <Image
                   src={item.image}
                   alt={item.title}
-                  width={320}
+                  width={460}
                   height={220}
                   className="object-cover"
                 />
@@ -116,5 +117,6 @@ export default function Services() {
       </div>
 
     </section>
+        
   );
 }

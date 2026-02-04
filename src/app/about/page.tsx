@@ -1,192 +1,42 @@
 import Image from "next/image";
+import FirstSection from "@/components/About-Page/firstSection";
+import Founders from "@/components/About-Page/founders";
+import ThirdSection from "@/components/About-Page/thirdSection";
 
 export default function AboutPage() {
   return (
-    <section className="bg-[#3c2f1b] min-h-screen py-20">
 
-      {/* ================= MAIN HERO ================= */}
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10 items-center">
+    <main className="bg-white text-black">
 
-        {/* ================= LEFT TEXT ================= */}
-        <div className="space-y-6">
+      {/* ================= HERO ================= */}
+      <section className="relative h-[65vh] font-heading italic flex items-center justify-center text-center bg-white text-black">
 
-          <p className="text-gray-600 text-lg">Hey. I'm Solt,</p>
+        <Image
+          src="/Blog-Page-Images/Blog.jpg"
+          alt="blog hero"
+          fill
+          className="object-cover"
+        />
 
-          <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-            A UI/UX <br />
-            <span className="italic font-light">& Brand</span> <br />
-            Designer
+        <div className="relative z-10 px-6">
+          <h1 className="text-6xl text-black md:text-7xl font-serif tracking-wide mb-6">
+            About Us
           </h1>
 
-          <p className="text-gray-500 text-sm max-w-sm">
-            Transforming ideas into stunning visuals — UI/UX and brand design
-            that captivates, engages, and delivers results.
+          <p className="text-sm tracking-[3px] uppercase text-gray-200">
+            Stay up to date on tips, tricks & trends
+            <br />
+            for social media & digital marketing
           </p>
-
-          <button className="bg-black text-white px-6 py-3 rounded-full flex items-center gap-3 hover:scale-105 transition">
-            CONTACT ME →
-          </button>
         </div>
 
 
-
-        {/* ================= CENTER IMAGE ================= */}
-        <div className="flex justify-center">
-          <div className="relative w-92 h-182 md:w-96 md:h-96 rounded-b-[200px] overflow-hidden">
-            <Image
-              src="/About-Page-Images/AboutUcut.jpg"   // apni image daalna
-              alt="Profile"
-              fill
-              className="object-cover"
-            />
-          </div>
-        </div>
+      </section>
+      <FirstSection />
+      <Founders />
+      <ThirdSection />
 
 
-
-        {/* ================= RIGHT STATS ================= */}
-        <div className="space-y-8 text-center md:text-right">
-
-          <div>
-            <h2 className="text-3xl font-semibold">15+</h2>
-            <p className="text-gray-500 text-sm">Years Experience</p>
-          </div>
-
-          <div>
-            <h2 className="text-3xl font-semibold">280+</h2>
-            <p className="text-gray-500 text-sm">Projects Delivered</p>
-          </div>
-
-          <div>
-            <h2 className="text-3xl font-semibold">*99%</h2>
-            <p className="text-gray-500 text-sm">Client Satisfaction</p>
-          </div>
-
-          <div>
-            <h2 className="text-3xl font-semibold">50</h2>
-            <p className="text-gray-500 text-sm">Clients worldwide</p>
-          </div>
-
-        </div>
-
-      </div>
-
-
-
-      {/* ================= FEATURES SECTION ================= */}
-      <div className="mt-20 border-t pt-12">
-
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10 text-center">
-
-          {/* CARD 1 */}
-          <div>
-            <h3 className="font-semibold mb-2">USER-CENTERED DESIGN</h3>
-            <p className="text-gray-500 text-sm">
-              Intuitive and engaging experiences tailored for your audience.
-            </p>
-          </div>
-
-          {/* CARD 2 */}
-          <div>
-            <h3 className="font-semibold mb-2">BRAND IDENTITY & STRATEGY</h3>
-            <p className="text-gray-500 text-sm">
-              Strong visual storytelling that makes your brand unforgettable.
-            </p>
-          </div>
-
-          {/* CARD 3 */}
-          <div>
-            <h3 className="font-semibold mb-2">RESPONSIVE & MODERN UI</h3>
-            <p className="text-gray-500 text-sm">
-              Pixel-perfect designs optimized for all devices.
-            </p>
-          </div>
-
-          {/* CARD 4 */}
-          <div>
-            <h3 className="font-semibold mb-2">SEAMLESS PROTOTYPING</h3>
-            <p className="text-gray-500 text-sm">
-              Innovative mockups to bring ideas to life before development.
-            </p>
-          </div>
-
-        </div>
-      </div>
-      {/* ================= BOTTOM INFO SECTION (DOTTED BG) ================= */}
-<section
-  className="py-28 relative"
-  style={{
-    backgroundImage: "radial-gradient(#d1d5db 1px, transparent 1px)",
-    backgroundSize: "22px 22px",
-  }}
->
-  <div className="max-w-7xl mx-auto px-6 space-y-28">
-
-    {/* ===== Row 1 ===== */}
-    <div className="grid md:grid-cols-2 gap-16 items-center">
-
-      {/* Text */}
-      <div>
-        <h3 className="text-2xl font-semibold mb-5">
-          The Creative Vision
-        </h3>
-
-        <p className="text-gray-600 leading-relaxed">
-          Main ek UI/UX aur Brand Designer hoon jo digital products ko sirf
-          beautiful nahi, balki functional banata hoon. Mere liye design ka
-          matlab sirf layout design karna nahi, balki user experience create
-          karna hai jo users ke liye intuitive aur seamless rahe.
-        </p>
-      </div>
-
-      {/* Image */}
-      <div className="rounded-2xl overflow-hidden shadow-lg">
-        <Image
-          src="/Hero-Page-Images/awards/award1.png"
-          alt="vision"
-          width={600}
-          height={400}
-          className="object-cover w-full h-[260px]"
-        />
-      </div>
-
-    </div>
-
-
-
-    {/* ===== Row 2 ===== */}
-    <div className="grid md:grid-cols-2 gap-16 items-center">
-
-      {/* Image first on desktop */}
-      <div className="order-2 md:order-1 rounded-2xl overflow-hidden shadow-lg">
-        <Image
-          src="/Hero-Page-Images/awards/award2.png"
-          alt="strategy"
-          width={600}
-          height={400}
-          className="object-cover w-full h-[260px]"
-        />
-      </div>
-
-      {/* Text */}
-      <div className="order-1 md:order-2">
-        <h3 className="text-2xl font-semibold mb-5">
-          Strategic Branding & Impact
-        </h3>
-
-        <p className="text-gray-600 leading-relaxed">
-          Brand identity sirf ek logo nahi, balki ek vishwas hai. Maine 15+
-          saal ke experience ke saath 280+ projects deliver kiye hain. Har
-          approach research-driven aur result-focused hoti hai.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-
-    </section>
+    </main>
   );
 }

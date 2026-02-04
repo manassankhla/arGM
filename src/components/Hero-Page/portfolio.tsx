@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Container from "../container";
 
 export default function Portfolio() {
   const projects = [
@@ -25,10 +26,10 @@ export default function Portfolio() {
   ];
 
   return (
-    <section className="relative bg-white overflow-hidden">
-
-      {/* Background slanted shape */}
-    <div className="absolute inset-0 z-0">
+    <Container>
+      <section className="relative bg-white py-15 overflow-hidden">
+        {/* Background slanted shape */}
+        {/* <div className="absolute inset-0 z-0">
   <Image
     src="/portfolio/bgLeft.png"
     alt="Portfolio background"
@@ -36,59 +37,72 @@ export default function Portfolio() {
     className="object-cover"
     priority
   />
-</div>
+</div> */}
 
+        <div className="relative mx-auto px-6">
+          {/* Heading */}
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="font-heading text-[74px] text-black italic mb-4">
+              Portfolio
+            </h2>
+            <p className="font-body text-[18px] text-gray-500 text-sm">
+              A curated collection of architectural and interior projects, each
+              shaped by clear concepts and thoughtful detailing. Our work
+              reflects a balance of space, light, materials, and
+              functionality—designed with purpose and precision.
+            </p>
+          </div>
 
+          {/* Grid */}
+          <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12">
+            {projects.map((item, index) => (
+              <div key={index} className="group">
+                <div className="rounded-[28px] overflow-hidden shadow-sm">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    width={600}
+                    height={420}
+                    className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
 
-      <div className="relative max-w-7xl mx-auto px-6">
-
-        {/* Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="font-heading text-black italic text-[42px] mb-4">
-            Portfolio
-          </h2>
-          <p className="font-body text-gray-500 text-sm">
-            A curated collection of architectural and interior projects, each
-            shaped by clear concepts and thoughtful detailing. Our work reflects
-            a balance of space, light, materials, and functionality—designed with
-            purpose and precision.
-          </p>
-        </div>
-
-        {/* Grid */}
-        <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12">
-          {projects.map((item, index) => (
-            <div key={index} className="group">
-              <div className="rounded-[28px] overflow-hidden shadow-sm">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  width={600}
-                  height={420}
-                  className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
-                />
+                <h3 className="mt-5 font-heading text-black italic text-xl">
+                  {item.title}
+                </h3>
+                <p className="text-xs tracking-wide text-gray-500 mt-1">
+                  {item.location}
+                </p>
               </div>
+            ))}
+          </div>
 
-              <h3 className="mt-5 font-heading text-black italic text-xl">
-                {item.title}
-              </h3>
-              <p className="text-xs tracking-wide text-gray-500 mt-1">
-                {item.location}
-              </p>
-            </div>
-          ))}
+          {/* Button */}
+          <div className="flex justify-center mt-10 mb-5">
+            <button
+              className="
+      inline-flex items-center
+      h-[64px]
+      px-[36px] py-[20px]
+      gap-2
+      rounded-[100px]
+      bg-black text-white
+      border border-black
+      text-sm
+      transition-all duration-300
+      hover:bg-white hover:text-black
+      group
+    "
+            >
+              Explore More
+              {/* Arrow */}
+              <span className="transition-transform duration-300 group-hover:rotate-45">
+                ↗
+              </span>
+            </button>
+          </div>
         </div>
-
-        {/* Button */}
-        <div className="flex justify-center mt-5 mb-5">
-          <button className="flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full text-sm hover:bg-gray-900 transition">
-            Explore More
-            <span>↗</span>
-          </button>
-        </div>
-
-      </div>
-      
-    </section>
+      </section>
+    </Container>
   );
 }

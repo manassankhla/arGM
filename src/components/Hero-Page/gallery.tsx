@@ -16,28 +16,28 @@ export default function Gallery() {
 
   return (
     <Container>
-    <section className="relative overflow-hidden py-28 bg-white">
+    <section className="relative overflow-hidden mb-10 bg-white">
 
       {/* ===== BACKGROUND IMAGE PLACEHOLDER ===== */}
       {/* YAHAN TUM APNI POLYGON IMAGE LAGANA */}
       <div className="absolute inset-0 -z-10">
-        <Image
+        {/* <Image
           src="/gallery/gallery-bg.png"
           alt=""
           fill
           className="object-cover"
           priority
-        />
+        /> */}
       </div>
 
       <div className=" mx-auto px-6">
 
         {/* ===== Heading ===== */}
         <div className="text-center mx-auto mb-20">
-          <h2 className="font-heading italic text-4xl mb-4">
+          <h2 className="font-heading italic text-[74px] mb-4">
             Gallery
           </h2>
-          <p className="text-sm text-gray-500 leading-relaxed">
+          <p className="text-gray-500 text-[18px] leading-relaxed">
             Our gallery captures the essence of ARGM’s design language — minimal,
             refined, and purposeful. Each image reflects our attention to
             proportion, light, and experiential quality.
@@ -65,6 +65,7 @@ export default function Gallery() {
 
         </div>
       </div>
-    </section></Container>
+    </section>
+    </Container>
   );
 }
