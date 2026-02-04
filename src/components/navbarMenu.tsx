@@ -65,10 +65,9 @@ export default function NavbarMenu() {
       { name: "Projects", path: "/projects" },
       { name: "Team Page", path: "/team" },
       { name: "Career", path: "/career" },
-      { name: "T&C Page", path: "/terms-and-conditions" },
       { name: "Privacy Policy", path: "/privacy-policy" },
       { name: "Awards & Events", path: "/awards" },
-      { name: "Blogs", path: "/blog" },
+      { name: "Blogs", path: "/blogs" },
       { name: "Contact Us", path: "/contact" },
     ].map((item) => (
       <Link
