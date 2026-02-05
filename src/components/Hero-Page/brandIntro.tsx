@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function BrandIntroduction() {
   return (
 
-    <section id="brand-intro" className="relative bg-white py-15 overflow-hidden">
+    <section id="brand-intro" className="relative bg-white py-12 md:py-20 lg:py-24 overflow-hidden px-4 md:px-6 lg:px-8">
 
 
       <div className="relative mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center z-10">
@@ -15,19 +15,19 @@ export default function BrandIntroduction() {
             alt="Brand Logo"
             width={500}
             height={400}
-            className="absolute -top-40  opacity-80 pointer-events-none select-none"
+            className="absolute -top-20 md:-top-40 left-0 opacity-80 pointer-events-none select-none w-48 h-auto md:w-auto"
           />
 
-          <h2 className="font-heading text-black italic text-[74px] ml-10 mb-6">
+          <h2 className="font-heading text-black italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 md:mb-6">
             Brand Introduction
           </h2>
 
-          <p className="font-body text-black text-[24px] ml-10 mb-5 leading-[50px]">
+          <p className="font-body text-black text-base sm:text-lg md:text-xl lg:text-2xl mb-4 md:mb-5 leading-relaxed md:leading-loose">
             Architecture, for us, is not just about buildings — it is about
             emotions, experiences, and the stories people live within spaces.
           </p>
 
-          <p className="font-body text-zinc-600 text-[18px] leading-[32px] ml-10">
+          <p className="font-body text-zinc-600 text-sm sm:text-base md:text-lg leading-relaxed">
             ARGM – Architecture Beyond Boundaries was founded on the belief that
             meaningful design emerges when creativity meets context, and form
             follows purpose. Every project begins with listening — to the site,
@@ -38,7 +38,7 @@ export default function BrandIntroduction() {
             to the client, and to the lifestyle the space is meant to support.
           </p>
           {/* Button */}
-          <div className="flex justify-center mr-140 mt-10 mb-5">
+          <div className="flex justify-start md:justify-center mt-6 md:mt-10 mb-5">
             <button
               className="
       inline-flex items-center
@@ -64,7 +64,7 @@ export default function BrandIntroduction() {
         </div>
         {/* RIGHT IMAGE STACK */}
         {/* RIGHT IMAGE STACK */}
-        <div className="relative w-full max-w-[700px] aspect-[4/5] mx-auto mt-10 md:mt-0">
+        <div className="relative w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-[700px] aspect-[4/5] mx-auto mt-10 md:mt-0">
 
           {/* MAIN LEFT IMAGE (TALL) */}
           <div className="absolute left-0 top-[10%] w-[65%] h-[65%] z-10 rounded-[32px] overflow-hidden shadow-md">

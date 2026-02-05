@@ -22,7 +22,7 @@ export default function AwardsPage() {
           src="/Blog-Page-Images/blog.jpg"   // same blog image reused
           alt="Awards Hero"
           fill
-          className="object-cover opacity-40"
+          className="object-cover"
         />
 
         <div className="relative z-10 px-6">
