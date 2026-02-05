@@ -21,9 +21,8 @@ export default function Blogs() {
   ];
 
   return (
-    <Container>
-      <section className="bg-white py-32">
-
+    <section className="bg-white py-6 md:py-8 lg:py-10">
+      <Container>
         <div className="mx-auto px-6">
 
           {/* ================= Heading ================= */}
@@ -112,7 +111,7 @@ export default function Blogs() {
 
         </div>
 
-      </section>
-    </Container>
+      </Container>
+    </section>
   );
 }

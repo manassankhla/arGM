@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function BrandIntroduction() {
   return (
 
-    <section id="brand-intro" className="relative bg-white py-12 md:py-20 lg:py-24 overflow-hidden px-4 md:px-6 lg:px-8">
+    <section id="brand-intro" className="relative bg-white py-6 md:py-8 lg:py-10 overflow-hidden px-4 md:px-6 lg:px-8">
 
 
       <div className="relative mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center z-10">
@@ -63,8 +63,7 @@ export default function BrandIntroduction() {
           </div>
         </div>
         {/* RIGHT IMAGE STACK */}
-        {/* RIGHT IMAGE STACK */}
-        <div className="relative w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-[700px] aspect-[4/5] mx-auto mt-10 md:mt-0">
+        <div className="relative w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-[550px] aspect-[4/5] mx-auto mt-10 md:mt-0">
 
           {/* MAIN LEFT IMAGE (TALL) */}
           <div className="absolute left-0 top-[10%] w-[65%] h-[65%] z-10 rounded-[32px] overflow-hidden shadow-md">

@@ -7,6 +7,7 @@ import Process from "@/components/Hero-Page/process";
 import Award from "@/components/Hero-Page/award";
 import Blogs from "@/components/Hero-Page/blog";
 import Gallery from "@/components/Hero-Page/gallery";
+import ScrollNavigator from "@/components/scrollNavigator";
 
 export default function HomePage() {
   return (
@@ -20,6 +21,7 @@ export default function HomePage() {
       <Award />
       <Blogs />
       <Gallery />
+      <ScrollNavigator />
     </>
   );
 }

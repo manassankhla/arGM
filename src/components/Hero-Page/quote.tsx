@@ -1,6 +1,6 @@
 export default function Quote() {
   return (
-    <section className="bg-black py-36 px-6">
+    <section className="bg-black py-6 md:py-8 lg:py-10 px-6">
       <div className="max-w-5xl mx-auto text-center">
 
         <p

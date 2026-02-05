@@ -1,0 +1,98 @@
+export const projects = [
+  {
+    id: "residential-care-project-in-paris",
+    title: "Residential Care Project in Paris",
+    desc: "Luxury living spaces crafted with modern design principles.",
+    date: "2024",
+    image: "/Project-Page-Images/project1.jpg",
+    gallery: [
+      "/Blog-Page-Images/Blog.jpg",
+      "/Project-Page-Images/project2.jpg",
+      "/Project-Page-Images/project3.jpg",
+    ],
+  },
+  {
+    id: "concert-hall-in-new-york",
+    title: "Concert Hall in New York",
+    desc: "Acoustic excellence with bold architectural expression.",
+    date: "2023",
+    image: "/Project-Page-Images/project2.jpg",
+    gallery: [
+      "/Project-Page-Images/project2.jpg",
+      "/Project-Page-Images/project3.jpg",
+      "/Project-Page-Images/project4.jpg",
+    ],
+  },
+  {
+    id: "modern-hotel-in-london",
+    title: "Modern Hotel in London",
+    desc: "Minimal interiors with warm hospitality experience.",
+    date: "2024",
+    image: "/Project-Page-Images/project3.jpg",
+    gallery: [
+      "/Project-Page-Images/project3.jpg",
+      "/Project-Page-Images/project4.jpg",
+      "/Project-Page-Images/project5.jpg",
+    ],
+  },
+  {
+    id: "luxury-villa-in-dubai",
+    title: "Luxury Villa in Dubai",
+    desc: "Private residence blending comfort and elegance.",
+    date: "2022",
+    image: "/Project-Page-Images/project4.jpg",
+    gallery: [
+      "/Project-Page-Images/project4.jpg",
+      "/Project-Page-Images/project5.jpg",
+      "/Project-Page-Images/project6.jpg",
+    ],
+  },
+  {
+    id: "corporate-office-interior",
+    title: "Corporate Office Interior",
+    desc: "Workspaces that inspire creativity and productivity.",
+    date: "2023",
+    image: "/Project-Page-Images/project5.jpg",
+    gallery: [
+      "/Project-Page-Images/project5.jpg",
+      "/Project-Page-Images/project6.jpg",
+      "/Project-Page-Images/project7.jpg",
+    ],
+  },
+  {
+    id: "modern-hotel-in-london-2",
+    title: "Modern Hotel in London",
+    desc: "Minimal interiors with warm hospitality experience.",
+    date: "2024",
+    image: "/Project-Page-Images/project6.jpg",
+    gallery: [
+      "/Project-Page-Images/project6.jpg",
+      "/Project-Page-Images/project7.jpg",
+      "/Project-Page-Images/project8.jpg",
+    ],
+  },
+  {
+    id: "luxury-villa-in-dubai-2",
+    title: "Luxury Villa in Dubai",
+    desc: "Private residence blending comfort and elegance.",
+    date: "2022",
+    image: "/Project-Page-Images/project7.jpg",
+    gallery: [
+      "/Project-Page-Images/project7.jpg",
+      "/Project-Page-Images/project8.jpg",
+      "/Project-Page-Images/project1.jpg",
+    ],
+  },
+  {
+    id: "corporate-office-interior-2",
+    title: "Corporate Office Interior",
+    desc: "Workspaces that inspire creativity and productivity.",
+    date: "2023",
+    image: "/Project-Page-Images/project8.jpg",
+    gallery: [
+      "/Project-Page-Images/project8.jpg",
+      "/Project-Page-Images/project1.jpg",
+      "/Project-Page-Images/project2.jpg",
+    ],
+  },
+];

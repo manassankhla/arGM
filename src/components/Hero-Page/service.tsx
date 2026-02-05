@@ -67,7 +67,7 @@ const services = [
 export default function Services() {
   return (
 
-    <section className="py-12 md:py-16 lg:py-20 bg-white overflow-hidden">
+    <section className="py-6 md:py-8 lg:py-10 bg-white overflow-hidden">
 
       {/* Heading */}
       <div className="text-center max-w-3xl mx-auto mb-16 px-6">

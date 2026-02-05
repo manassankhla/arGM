@@ -14,11 +14,11 @@ export default function Contact() {
                     />
             
                     <div className="relative z-10 px-6">
-                      <h1 className="text-6xl md:text-7xl font-serif italic tracking-wide mb-6">
+                      <h1 className="text-6xl md:text-7xl font-heading italic tracking-wide mb-6">
                         Contact Us
                       </h1>
             
-                      <p className="text-sm tracking-[3px] uppercase text-gray-700">
+                      <p className="font-body text-sm tracking-[3px] uppercase text-gray-700">
                         Recognition • Achievements • Milestones
                       </p>
                     </div>
@@ -35,7 +35,7 @@ export default function Contact() {
 
                             <p className="text-sm text-gray-500 mb-6">/ get in touch /</p>
 
-                            <h1 className="text-4xl md:text-5xl font-semibold leading-tight mb-8">
+                            <h1 className="text-4xl md:text-5xl font-heading italic leading-tight mb-8">
                                 We are always ready
                                 <br />
                                 to help you and
@@ -56,24 +56,24 @@ export default function Contact() {
                             <div className="grid grid-cols-2 gap-y-10 text-sm">
 
                                 <div>
-                                    <p className="font-semibold mb-2">Call Center</p>
+                                    <p className="font-heading italic mb-2">Call Center</p>
                                     <p className="text-gray-500">+91 98765 43210</p>
                                     <p className="text-gray-500">+0123 456 789</p>
                                 </div>
 
                                 <div>
-                                    <p className="font-semibold mb-2">Our Location</p>
+                                    <p className="font-heading italic mb-2">Our Location</p>
                                     <p className="text-gray-500">Jodhpur, Rajasthan</p>
                                     <p className="text-gray-500">India</p>
                                 </div>
 
                                 <div>
-                                    <p className="font-semibold mb-2">Email</p>
+                                    <p className="font-heading italic mb-2">Email</p>
                                     <p className="text-gray-500">hello@yourmail.com</p>
                                 </div>
 
                                 <div>
-                                    <p className="font-semibold mb-2">Social network</p>
+                                    <p className="font-heading italic mb-2">Social network</p>
                                     <div className="flex gap-4 text-gray-500">
                                         <span>Fb</span>
                                         <span>In</span>
@@ -90,9 +90,9 @@ export default function Contact() {
                         {/* ================= RIGHT FORM ================= */}
                         <div className="bg-white rounded-2xl p-10 shadow-md">
 
-                            <h3 className="text-lg font-semibold mb-2">Get in Touch</h3>
+                            <h3 className="text-lg font-heading italic mb-2">Get in Touch</h3>
 
-                            <p className="text-gray-500 text-sm mb-8">
+                            <p className="font-body text-gray-500 text-sm mb-8">
                                 Feel free to get in touch anytime. We’re here and ready to help your business.
                             </p>
 
@@ -101,25 +101,25 @@ export default function Contact() {
                                 <input
                                     type="text"
                                     placeholder="Full Name"
-                                    className="w-full border-b border-gray-300 outline-none py-3 focus:border-black transition"
+                                    className="font-body w-full border-b border-gray-300 outline-none py-3 focus:border-black transition"
                                 />
 
                                 <input
                                     type="email"
                                     placeholder="Email"
-                                    className="w-full border-b border-gray-300 outline-none py-3 focus:border-black transition"
+                                    className="font-body w-full border-b border-gray-300 outline-none py-3 focus:border-black transition"
                                 />
 
                                 <input
                                     type="text"
                                     placeholder="Subject"
-                                    className="w-full border-b border-gray-300 outline-none py-3 focus:border-black transition"
+                                    className="font-body w-full border-b border-gray-300 outline-none py-3 focus:border-black transition"
                                 />
 
                                 <textarea
                                     placeholder="Message"
                                     rows={4}
-                                    className="w-full border-b border-gray-300 outline-none py-3 focus:border-black transition resize-none"
+                                    className="font-body w-full border-b border-gray-300 outline-none py-3 focus:border-black transition resize-none"
                                 />
 
 

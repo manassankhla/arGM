@@ -19,7 +19,7 @@ export default function AboutPage() {
         />
 
         <div className="relative z-10 px-6">
-          <h1 className="text-6xl text-black md:text-7xl font-serif tracking-wide mb-6">
+          <h1 className="text-6xl text-black md:text-7xl font-heading italic tracking-wide mb-6">
             About Us
           </h1>
 

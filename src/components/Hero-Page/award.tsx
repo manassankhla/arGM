@@ -1,80 +1,139 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 
 export default function Award() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const awards = [
+    {
+      image: "/Hero-Page-Images/awards/award1.png",
+      title: "Zenith Awards: Excellence in Spatial Design",
+    },
+    {
+      image: "/Hero-Page-Images/awards/award2.png",
+      title: "Zenith Awards: Excellence in Spatial Design",
+    },
+    {
+      image: "/Hero-Page-Images/awards/award1.png",
+      title: "Zenith Awards: Excellence in Spatial Design",
+    },
+    {
+      image: "/Hero-Page-Images/awards/award2.png",
+      title: "Zenith Awards: Excellence in Spatial Design",
+    },
+  ];
+
+  // Auto-scroll functionality
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    let scrollInterval: NodeJS.Timeout;
+    let isPaused = false;
+
+    const startAutoScroll = () => {
+      if (isPaused) return;
+
+      scrollInterval = setInterval(() => {
+        if (scrollContainer && !isPaused) {
+          const cardWidth = 360 + 24; // card width + gap
+          const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+
+          // If we've reached the end, reset to start
+          if (scrollContainer.scrollLeft >= maxScroll - 10) {
+            scrollContainer.scrollTo({ left: 0, behavior: "smooth" });
+          } else {
+            scrollContainer.scrollBy({ left: cardWidth, behavior: "smooth" });
+          }
+        }
+      }, 3000); // Scroll every 3 seconds
+    };
+
+    startAutoScroll();
+
+    // Pause on hover
+    const handleMouseEnter = () => {
+      isPaused = true;
+      clearInterval(scrollInterval);
+    };
+
+    const handleMouseLeave = () => {
+      isPaused = false;
+      startAutoScroll();
+    };
+
+    scrollContainer.addEventListener("mouseenter", handleMouseEnter);
+    scrollContainer.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      clearInterval(scrollInterval);
+      scrollContainer.removeEventListener("mouseenter", handleMouseEnter);
+      scrollContainer.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
+
   return (
-    <section className="relative py-16 md:py-24 lg:py-32 overflow-hidden bg-white">
+    <section className="relative py-6 md:py-8 lg:py-10 overflow-hidden bg-white">
+      <div className="relative">
+        {/* Full Width Black Background */}
+        <div className="bg-black">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center">
 
-      {/* ================= VERTICAL GRID LINES (Desktop only) ================= */}
-      <div className="absolute inset-0 hidden lg:flex justify-between px-[8vw] pointer-events-none z-0">
-        {[1, 2, 3, 4].map((i) => (
-          <span key={i} className="w-px bg-gray-200" />
-        ))}
-      </div>
+            {/* ================= LEFT TEXT SECTION ================= */}
+            <div className="text-white p-8 md:p-12 lg:p-16 xl:p-20 lg:min-h-[400px] flex flex-col justify-center">
+              <div className="max-w-xl lg:ml-auto lg:mr-8">
+                <h2 className="font-heading italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 md:mb-6">
+                  Awards / Insights
+                </h2>
 
-      {/* ================= MAIN CONTAINER ================= */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-
-          {/* ================= LEFT TEXT SECTION ================= */}
-          <div className="bg-black text-white p-8 md:p-12 lg:p-16 rounded-3xl lg:rounded-none">
-
-            <h2 className="italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light mb-4 md:mb-6">
-              Awards / Insights
-            </h2>
-
-            <p className="text-gray-300 text-sm md:text-base leading-relaxed max-w-md">
-              Our work has been recognized for its design clarity, innovation,
-              and thoughtful approach to architecture and interiors.
-            </p>
-
-          </div>
-
-          {/* ================= RIGHT IMAGES SECTION ================= */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
-
-            {/* IMAGE 1 */}
-            <div className="group">
-              <div className="rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300">
-                <Image
-                  src="/Hero-Page-Images/awards/award1.png"
-                  alt="Award 1"
-                  width={400}
-                  height={520}
-                  className="object-cover w-full h-auto group-hover:scale-105 transition-transform duration-500"
-                />
+                <p className="font-body text-gray-300 text-sm md:text-base leading-relaxed">
+                  Our work has been recognized for its design clarity, innovation,
+                  and thoughtful approach to architecture and interiors.
+                </p>
               </div>
-
-              <p className="mt-4 md:mt-6 text-base md:text-lg italic text-gray-900 font-serif">
-                Zenith Awards: Excellence in Spatial Design
-              </p>
             </div>
 
-            {/* IMAGE 2 */}
-            <div className="group">
-              <div className="rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300">
-                <Image
-                  src="/Hero-Page-Images/awards/award2.png"
-                  alt="Award 2"
-                  width={400}
-                  height={520}
-                  className="object-cover w-full h-auto group-hover:scale-105 transition-transform duration-500"
-                />
+            {/* ================= RIGHT SCROLLING AWARDS SECTION ================= */}
+            <div className="relative px-4 md:px-6 lg:px-8 py-8 lg:py-12">
+              <div
+                ref={scrollRef}
+                className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth"
+                style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+              >
+                {awards.map((award, index) => (
+                  <div key={index} className="shrink-0 w-[280px] sm:w-[320px] md:w-[360px] group">
+                    <div className="rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                      <Image
+                        src={award.image}
+                        alt={award.title}
+                        width={400}
+                        height={520}
+                        className="object-cover w-full h-[360px] sm:h-[420px] md:h-[480px] group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+
+                    <p className="font-heading italic mt-4 md:mt-6 text-sm md:text-base lg:text-lg text-white">
+                      {award.title}
+                    </p>
+                  </div>
+                ))}
               </div>
 
-              <p className="mt-4 md:mt-6 text-base md:text-lg italic text-gray-900 font-serif">
-                Zenith Awards: Excellence in Spatial Design
-              </p>
+              {/* Gradient fade on edges */}
+              <div className="hidden lg:block absolute top-0 right-0 w-20 h-full bg-linear-to-l from-black to-transparent pointer-events-none" />
             </div>
-
           </div>
-
         </div>
-
       </div>
 
+      <style jsx>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </section>
+    
   );
 }

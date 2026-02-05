@@ -94,13 +94,13 @@ export default function NavbarMenu() {
 
 
           {/* ================= RIGHT CONTACT ================= */}
-          <div className="w-full md:w-1/2 flex items-center px-4 sm:px-8 md:px-20 mt-12 md:mt-0">
+          <div className="w-full md:w-1/2 flex items-center px-8 sm:px-8 md:px-20 mt-12 md:mt-0">
 
             <div className="max-w-md space-y-4 text-gray-200">
 
               <h2 className="text-lg md:text-xl font-bold text-white tracking-widest">
                 CONTACT US
-              </h2>
+              </h2> 
 
               <p className="text-sm md:text-base">
                 Head Office:{" "}

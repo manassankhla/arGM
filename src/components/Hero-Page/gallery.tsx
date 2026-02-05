@@ -23,9 +23,8 @@ export default function Gallery() {
   ];
 
   return (
-    <Container>
-      <section className="relative overflow-hidden mb-10 bg-white">
-
+    <section className="relative overflow-hidden bg-white py-6 md:py-8 lg:py-10">
+      <Container>
         {/* ===== BACKGROUND IMAGE PLACEHOLDER ===== */}
         {/* YAHAN TUM APNI POLYGON IMAGE LAGANA */}
         <div className="absolute inset-0 -z-10">
@@ -38,8 +37,7 @@ export default function Gallery() {
         /> */}
         </div>
 
-        <div className=" mx-auto px-6">
-
+        <div className=" mx-auto">
           {/* ===== Heading ===== */}
           <div className="text-center mx-auto mb-20">
             <h2 className="font-heading italic text-[74px] mb-4">
@@ -53,8 +51,7 @@ export default function Gallery() {
           </div>
 
           {/* ===== GALLERY GRID ===== */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {images.map((img, i) => (
               <div
                 key={i}
@@ -69,10 +66,9 @@ export default function Gallery() {
                 />
               </div>
             ))}
-
           </div>
         </div>
-      </section>
-    </Container>
+      </Container>
+    </section>
   );
 }

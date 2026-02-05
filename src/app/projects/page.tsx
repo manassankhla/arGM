@@ -3,78 +3,52 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Search } from "lucide-react";
-
-//shadcn search button import
-import { Button } from "@/components/ui/button"
-import { Field, FieldLabel } from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
+import { Search, ChevronLeft, ChevronRight, X } from "lucide-react";
 
 import Container from "@/components/container";
+import { projects } from "@/data/projects";
 
 export default function ProjectsPage() {
 
   const router = useRouter();
   const [search, setSearch] = useState("");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<number | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
 
-  const projects = [
-    {
-      title: "Residential Care Project in Paris",
-      desc: "Luxury living spaces crafted with modern design principles.",
-      date: "2024",
-      image: "/Project-Page-Images/project1.jpg",
-    },
-    {
-      title: "Concert Hall in New York",
-      desc: "Acoustic excellence with bold architectural expression.",
-      date: "2023",
-      image: "/Project-Page-Images/project2.jpg",
-    },
-    {
-      title: "Modern Hotel in London",
-      desc: "Minimal interiors with warm hospitality experience.",
-      date: "2024",
-      image: "/Project-Page-Images/project3.jpg",
-    },
-    {
-      title: "Luxury Villa in Dubai",
-      desc: "Private residence blending comfort and elegance.",
-      date: "2022",
-      image: "/Project-Page-Images/project4.jpg",
-    },
-    {
-      title: "Corporate Office Interior",
-      desc: "Workspaces that inspire creativity and productivity.",
-      date: "2023",
-      image: "/Project-Page-Images/project5.jpg",
-    },
-    {
-      title: "Modern Hotel in London",
-      desc: "Minimal interiors with warm hospitality experience.",
-      date: "2024",
-      image: "/Project-Page-Images/project6.jpg",
-    },
-    {
-      title: "Luxury Villa in Dubai",
-      desc: "Private residence blending comfort and elegance.",
-      date: "2022",
-      image: "/Project-Page-Images/project7.jpg",
-    },
-    {
-      title: "Corporate Office Interior",
-      desc: "Workspaces that inspire creativity and productivity.",
-      date: "2023",
-      image: "/Project-Page-Images/project8.jpg",
-    },
-  ];
+
 
   //Search Filter Logic
   const filteredProjects = projects.filter((item) =>
     item.title.toLowerCase().includes(search.toLowerCase()) ||
     item.desc.toLowerCase().includes(search.toLowerCase())
   );
+
+  // Modal handlers - keeping these but we'll also add navigation to the individual page
+  const openModal = (projectIndex: number) => {
+    setSelectedProject(projectIndex);
+    setCurrentImageIndex(0);
+  };
+
+  const closeModal = () => {
+    setSelectedProject(null);
+    setCurrentImageIndex(0);
+  };
+
+  const nextImage = () => {
+    if (selectedProject !== null) {
+      const totalImages = projects[selectedProject].gallery.length;
+      setCurrentImageIndex((prev) => (prev + 1) % totalImages);
+    }
+  };
+
+  const prevImage = () => {
+    if (selectedProject !== null) {
+      const totalImages = projects[selectedProject].gallery.length;
+      setCurrentImageIndex((prev) => (prev - 1 + totalImages) % totalImages);
+    }
+  };
 
   return (
     <main className="bg-white text-black min-h-screen">
@@ -90,7 +64,7 @@ export default function ProjectsPage() {
         />
 
         <div className="relative z-10 px-6">
-          <h1 className="text-6xl text-black md:text-7xl font-serif tracking-wide mb-6">
+          <h1 className="text-6xl text-black md:text-7xl font-heading italic tracking-wide mb-6">
             Our Projects
           </h1>
 
@@ -138,21 +112,24 @@ export default function ProjectsPage() {
                 <div
                   className="
                     flex items-center gap-2
-                    animate-in slide-in-from-right
+                    animate-in fade-in
                     duration-300
                   "
                 >
                   <div className="relative">
-                    <Input
+                    <input
+                      type="text"
                       id="search-projects"
                       placeholder="Search projects..."
                       value={search}
                       onChange={(e) => setSearch(e.target.value)}
                       className="
                         w-64 md:w-80
+                        px-4 py-2
                         pr-10
                         border-2 border-black
                         focus:ring-2 focus:ring-black
+                        focus:outline-none
                         rounded-full
                       "
                       autoFocus
@@ -193,7 +170,7 @@ export default function ProjectsPage() {
             grid-cols-1
             md:grid-cols-2
             lg:grid-cols-3
-            xl:grid-cols-4
+            xl:grid-cols-3
             gap-6
           "
           >
@@ -201,6 +178,7 @@ export default function ProjectsPage() {
             {filteredProjects.map((item, index) => (
               <div
                 key={index}
+                onClick={() => openModal(index)}
                 className="
                 relative
                 h-[520px]
@@ -248,6 +226,97 @@ export default function ProjectsPage() {
 
         </section>
       </Container>
+
+      {/* ================= MODAL GALLERY ================= */}
+      {selectedProject !== null && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-md"
+          onClick={closeModal}
+        >
+          {/* Close button */}
+          <button
+            onClick={closeModal}
+            className="absolute top-6 right-6 z-50 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-200"
+            aria-label="Close modal"
+          >
+            <X className="w-6 h-6 text-white" />
+          </button>
+
+          {/* Previous button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              prevImage();
+            }}
+            className="absolute left-6 z-50 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-200"
+            aria-label="Previous image"
+          >
+            <ChevronLeft className="w-8 h-8 text-white" />
+          </button>
+
+          {/* Next button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              nextImage();
+            }}
+            className="absolute right-6 z-50 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-200"
+            aria-label="Next image"
+          >
+            <ChevronRight className="w-8 h-8 text-white" />
+          </button>
+
+          {/* Image container */}
+          <div
+            className="relative w-full h-full flex items-center justify-center p-12"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="relative w-full h-full max-w-6xl max-h-[80vh]">
+              <Image
+                src={projects[selectedProject].gallery[currentImageIndex]}
+                alt={projects[selectedProject].title}
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+          </div>
+
+          {/* Project title and counter */}
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center z-50 pointer-events-none">
+            <h2 className="font-heading italic text-white text-xl md:text-2xl uppercase tracking-wider">
+              {projects[selectedProject].title}
+            </h2>
+            <p className="font-body text-white/80 text-sm">
+              {currentImageIndex + 1} / {projects[selectedProject].gallery.length}
+            </p>
+          </div>
+
+          {/* View More Button (Bottom Right) */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              router.push(`/projects/${projects[selectedProject].id}`);
+            }}
+            className="
+              absolute bottom-8 right-8 z-50
+              group
+              flex items-center gap-2
+              bg-white text-black
+              px-6 py-3
+              rounded-full
+              font-medium
+              hover:bg-gray-200
+              transition-all
+              shadow-xl
+            "
+          >
+            <span>View More</span>
+            <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </button>
+
+        </div>
+      )}
 
     </main>
   );

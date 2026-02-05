@@ -26,8 +26,8 @@ export default function Portfolio() {
   ];
 
   return (
-    <Container>
-      <section className="relative bg-white py-15 overflow-hidden">
+    <section className="relative bg-white overflow-hidden py-6 md:py-8 lg:py-10">
+      <Container>
         {/* Background slanted shape */}
         {/* <div className="absolute inset-0 z-0">
   <Image
@@ -39,7 +39,7 @@ export default function Portfolio() {
   />
 </div> */}
 
-        <div className="relative mx-auto px-6">
+        <div className="relative mx-auto">
           {/* Heading */}
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="font-heading text-[74px] text-black italic mb-4">
@@ -57,13 +57,13 @@ export default function Portfolio() {
           <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12">
             {projects.map((item, index) => (
               <div key={index} className="group">
-                <div className="rounded-[28px] overflow-hidden shadow-sm">
+                <div>
                   <Image
                     src={item.image}
                     alt={item.title}
                     width={600}
                     height={420}
-                    className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover rounded-2xl w-full h-full transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
 
@@ -102,7 +102,7 @@ export default function Portfolio() {
             </button>
           </div>
         </div>
-      </section>
-    </Container>
+      </Container>
+    </section>
   );
 }

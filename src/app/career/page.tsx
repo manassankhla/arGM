@@ -3,7 +3,16 @@
 import Link from "next/link";
 import Image from "next/image";
 
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { Search } from "lucide-react";
+
+
 export default function CareerPage() {
+
+  const [search, setSearch] = useState("");
+  const router = useRouter();
+
   const jobs = [
     {
       role: "Senior Interior Designer",
@@ -44,7 +53,7 @@ export default function CareerPage() {
               />
       
               <div className="relative z-10 px-6">
-                <h1 className="text-6xl text-black md:text-7xl font-serif tracking-wide mb-6">
+                <h1 className="text-6xl text-black md:text-7xl font-heading italic tracking-wide mb-6">
                   Careers
                 </h1>
       
@@ -90,11 +99,11 @@ export default function CareerPage() {
                 "
               >
                 <div>
-                  <h3 className="text-xl font-medium mb-2 group-hover:underline">
+                  <h3 className="text-xl font-heading italic mb-2 group-hover:underline">
                     {job.role}
                   </h3>
 
-                  <p className="text-sm text-gray-500">
+                  <p className="font-body text-sm text-gray-500">
                     {job.type} • {job.location}
                   </p>
                 </div>
