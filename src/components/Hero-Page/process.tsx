@@ -30,7 +30,7 @@ export default function Process() {
             <Container>
                 {/* Heading */}
                 <div className="text-center max-w-4xl mx-auto mb-12 md:mb-16 px-4">
-                    <h2 className="font-heading italic text-black text-3xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-4 md:mb-6">
+                    <h2 className="font-heading italic text-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-4">
                         Our Process
                     </h2>
                     <p className="font-body text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">

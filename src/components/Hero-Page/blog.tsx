@@ -23,11 +23,11 @@ export default function Blogs() {
   return (
     <section className="bg-white py-6 md:py-8 lg:py-10">
       <Container>
-        <div className="mx-auto px-6">
+        <div className="mx-auto">
 
           {/* ================= Heading ================= */}
           <div className="text-center max-w-3xl mx-auto mb-24">
-            <h2 className="font-heading text-[74px] italic text-5xl mb-5">
+            <h2 className="font-heading italic text-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-4">
               Blogs & Articles
             </h2>
 

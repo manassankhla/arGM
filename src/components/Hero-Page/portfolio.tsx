@@ -42,7 +42,7 @@ export default function Portfolio() {
         <div className="relative mx-auto">
           {/* Heading */}
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="font-heading text-[74px] text-black italic mb-4">
+            <h2 className="font-heading italic text-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-4">
               Portfolio
             </h2>
             <p className="font-body text-[18px] text-gray-500 text-sm">

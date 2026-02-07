@@ -7,133 +7,109 @@ export default function Award() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const awards = [
-    {
-      image: "/Hero-Page-Images/awards/award1.png",
-      title: "Zenith Awards: Excellence in Spatial Design",
-    },
-    {
-      image: "/Hero-Page-Images/awards/award2.png",
-      title: "Zenith Awards: Excellence in Spatial Design",
-    },
-    {
-      image: "/Hero-Page-Images/awards/award1.png",
-      title: "Zenith Awards: Excellence in Spatial Design",
-    },
-    {
-      image: "/Hero-Page-Images/awards/award2.png",
-      title: "Zenith Awards: Excellence in Spatial Design",
-    },
+    { image: "/Hero-Page-Images/awards/award1.png", title: "Zenith Awards: Excellence in Spatial Design" },
+    { image: "/Hero-Page-Images/awards/award2.png", title: "Zenith Awards: Excellence in Spatial Design" },
+    { image: "/Hero-Page-Images/awards/award1.png", title: "Zenith Awards: Excellence in Spatial Design" },
+    { image: "/Hero-Page-Images/awards/award2.png", title: "Zenith Awards: Excellence in Spatial Design" },
   ];
 
-  // Auto-scroll functionality
+  /* ================= BOUNCE SCROLL (LEFT ↔ RIGHT) ================= */
   useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
+    const el = scrollRef.current;
+    if (!el) return;
 
-    let scrollInterval: NodeJS.Timeout;
-    let isPaused = false;
+    let frame: number;
+    let direction = 1; // 1 → right, -1 → left
+    const speed = 0.8;
 
-    const startAutoScroll = () => {
-      if (isPaused) return;
+    const animate = () => {
+      const maxScroll = el.scrollWidth - el.clientWidth;
 
-      scrollInterval = setInterval(() => {
-        if (scrollContainer && !isPaused) {
-          const cardWidth = 360 + 24; // card width + gap
-          const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+      el.scrollLeft += speed * direction;
 
-          // If we've reached the end, reset to start
-          if (scrollContainer.scrollLeft >= maxScroll - 10) {
-            scrollContainer.scrollTo({ left: 0, behavior: "smooth" });
-          } else {
-            scrollContainer.scrollBy({ left: cardWidth, behavior: "smooth" });
-          }
-        }
-      }, 3000); // Scroll every 3 seconds
+      // reach right → go left
+      if (el.scrollLeft >= maxScroll) {
+        el.scrollLeft = maxScroll;
+        direction = -1;
+      }
+
+      // reach left → go right
+      if (el.scrollLeft <= 0) {
+        el.scrollLeft = 0;
+        direction = 1;
+      }
+
+      frame = requestAnimationFrame(animate);
     };
 
-    startAutoScroll();
-
-    // Pause on hover
-    const handleMouseEnter = () => {
-      isPaused = true;
-      clearInterval(scrollInterval);
-    };
-
-    const handleMouseLeave = () => {
-      isPaused = false;
-      startAutoScroll();
-    };
-
-    scrollContainer.addEventListener("mouseenter", handleMouseEnter);
-    scrollContainer.addEventListener("mouseleave", handleMouseLeave);
-
-    return () => {
-      clearInterval(scrollInterval);
-      scrollContainer.removeEventListener("mouseenter", handleMouseEnter);
-      scrollContainer.removeEventListener("mouseleave", handleMouseLeave);
-    };
+    animate();
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   return (
-    <section className="relative py-6 md:py-8 lg:py-10 overflow-hidden bg-white">
-      <div className="relative">
-        {/* Full Width Black Background */}
-        <div className="bg-black">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center">
+    <section
+      className="
+        relative py-20 lg:py-28 overflow-hidden
+        bg-black lg:bg-white   /* mobile full black */
+      "
+    >
+      {/* ================= DESKTOP BLACK STRIP ================= */}
+      <div className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 w-[100%] h-[300px] bg-black" />
 
-            {/* ================= LEFT TEXT SECTION ================= */}
-            <div className="text-white p-8 md:p-12 lg:p-16 xl:p-20 lg:min-h-[400px] flex flex-col justify-center">
-              <div className="max-w-xl lg:ml-auto lg:mr-8">
-                <h2 className="font-heading italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 md:mb-6">
-                  Awards / Insights
-                </h2>
+      {/* ================= CONTENT ================= */}
+      <div className="relative flex flex-col lg:flex-row items-center gap-12 lg:gap-0">
 
-                <p className="font-body text-gray-300 text-sm md:text-base leading-relaxed">
-                  Our work has been recognized for its design clarity, innovation,
-                  and thoughtful approach to architecture and interiors.
+        {/* ================= TEXT ================= */}
+        <div className="w-full lg:w-[40%] px-6 lg:pl-24 text-white text-center lg:text-left">
+          <h2 className="font-heading italic text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-4">
+            Awards / Insights
+          </h2>
+
+          <p className="text-gray-400 max-w-md mx-auto lg:mx-0">
+            Our work has been recognized for its design clarity,
+            innovation, and thoughtful approach to architecture
+            and interiors.
+          </p>
+        </div>
+
+        {/* ================= CAROUSEL ================= */}
+        <div
+          ref={scrollRef}
+          className="
+            w-full
+            lg:w-[600px]   /* 1 FULL + 1 HALF card */
+            overflow-hidden
+            ml-auto        /* touch right */
+            pl-0 lg:pl-10
+          "
+        >
+          <div className="flex gap-8 w-max">
+
+            {awards.map((award, index) => (
+              <div
+                key={index}
+                className="shrink-0 w-[85vw] sm:w-[380px]"
+              >
+                <div className="rounded-3xl overflow-hidden">
+                  <Image
+                    src={award.image}
+                    alt={award.title}
+                    width={400}
+                    height={520}
+                    className="object-cover w-full h-[460px]"
+                  />
+                </div>
+
+                <p className="italic mt-5 text-white lg:text-black text-center lg:text-left">
+                  {award.title}
                 </p>
               </div>
-            </div>
+            ))}
 
-            {/* ================= RIGHT SCROLLING AWARDS SECTION ================= */}
-            <div className="relative px-4 md:px-6 lg:px-8 py-8 lg:py-12">
-              <div
-                ref={scrollRef}
-                className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth"
-                style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-              >
-                {awards.map((award, index) => (
-                  <div key={index} className="shrink-0 w-[280px] sm:w-[320px] md:w-[360px] group">
-                    <div className="rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                      <Image
-                        src={award.image}
-                        alt={award.title}
-                        width={400}
-                        height={520}
-                        className="object-cover w-full h-[360px] sm:h-[420px] md:h-[480px] group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-
-                    <p className="font-heading italic mt-4 md:mt-6 text-sm md:text-base lg:text-lg text-white">
-                      {award.title}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              {/* Gradient fade on edges */}
-              <div className="hidden lg:block absolute top-0 right-0 w-20 h-full bg-linear-to-l from-black to-transparent pointer-events-none" />
-            </div>
           </div>
         </div>
-      </div>
 
-      <style jsx>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
+      </div>
     </section>
-    
   );
 }

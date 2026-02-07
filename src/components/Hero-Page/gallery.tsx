@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 import Container from "@/components/container";
 import { Button } from "@/components/ui/button";
 import {
@@ -22,6 +25,8 @@ export default function Gallery() {
     { src: "/Hero-Page-Images/gallery/gallery2.png", tall: false }, //9
   ];
 
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
     <section className="relative overflow-hidden bg-white py-6 md:py-8 lg:py-10">
       <Container>
@@ -40,7 +45,7 @@ export default function Gallery() {
         <div className=" mx-auto">
           {/* ===== Heading ===== */}
           <div className="text-center mx-auto mb-20">
-            <h2 className="font-heading italic text-[74px] mb-4">
+            <h2 className="font-heading italic text-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-4">
               Gallery
             </h2>
             <p className="text-gray-500 text-[18px] leading-relaxed">
@@ -55,7 +60,8 @@ export default function Gallery() {
             {images.map((img, i) => (
               <div
                 key={i}
-                className={`relative rounded-[28px] overflow-hidden ${img.tall ? "row-span-2 h-[520px]" : "h-[250px]"
+                onClick={() => setSelectedImage(img.src)}
+                className={`relative rounded-[28px] overflow-hidden cursor-pointer ${img.tall ? "row-span-2 h-[520px]" : "h-[250px]"
                   }`}
               >
                 <Image
@@ -69,6 +75,37 @@ export default function Gallery() {
           </div>
         </div>
       </Container>
+
+
+      {/* ================= LIGHTBOX MODAL ================= */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          {/* Close button */}
+          <button
+            onClick={() => setSelectedImage(null)}
+            className="absolute top-6 right-6 z-50 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-200"
+          >
+            {/* Using a simple X character if lucide X isn't imported, but cleaner to import it. Will add import in next step if needed or assume standard svg */}
+            <span className="text-white text-2xl font-light">✕</span>
+          </button>
+
+          <div
+            className="relative w-full max-w-5xl h-[85vh] rounded-xl overflow-hidden shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={selectedImage}
+              alt="Gallery Preview"
+              fill
+              className="object-contain"
+            />
+          </div>
+        </div>
+      )}
+
     </section>
   );
 }

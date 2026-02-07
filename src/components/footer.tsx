@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 
 export default function Footer() {
     return (
@@ -71,14 +72,18 @@ export default function Footer() {
 
                     {/* Social Icons */}
                     <div className="flex gap-4 mt-6">
-                        {["f", "x", "in", "▶"].map((icon, i) => (
-                            <div
-                                key={i}
-                                className="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-sm cursor-pointer hover:bg-gray-700"
-                            >
-                                {icon}
-                            </div>
-                        ))}
+                        <Link href="#" className="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-gray-700 hover:text-white transition-colors">
+                            <Facebook className="w-4 h-4" />
+                        </Link>
+                        <Link href="#" className="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-gray-700 hover:text-white transition-colors">
+                            <Twitter className="w-4 h-4" />
+                        </Link>
+                        <Link href="#" className="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-gray-700 hover:text-white transition-colors">
+                            <Linkedin className="w-4 h-4" />
+                        </Link>
+                        <Link href="#" className="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-gray-700 hover:text-white transition-colors">
+                            <Instagram className="w-4 h-4" />
+                        </Link>
                     </div>
                 </div>
             </div>

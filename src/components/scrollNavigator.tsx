@@ -43,11 +43,11 @@ export default function ScrollNavigator() {
 
     const handleClick = () => {
         if (scrollDirection === "down") {
-            // User is scrolling DOWN -> Button shows UP -> Go to TOP
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        } else {
-            // User is scrolling UP -> Button shows DOWN -> Go to BOTTOM
+            // User is scrolling DOWN -> Button shows DOWN -> Go to BOTTOM
             window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+        } else {
+            // User is scrolling UP -> Button shows UP -> Go to TOP
+            window.scrollTo({ top: 0, behavior: "smooth" });
         }
     };
 
@@ -57,7 +57,7 @@ export default function ScrollNavigator() {
         <button
             onClick={handleClick}
             className="
-        fixed left-8 bottom-8 z-50
+        fixed right-8 bottom-8 z-50
         w-14 h-14
         bg-black text-white
         rounded-full
@@ -66,12 +66,12 @@ export default function ScrollNavigator() {
         hover:scale-110 transition-transform duration-300
         group
       "
-            aria-label={scrollDirection === "down" ? "Scroll to Top" : "Scroll to Bottom"}
+            aria-label={scrollDirection === "down" ? "Scroll to Bottom" : "Scroll to Top"}
         >
             {scrollDirection === "down" ? (
-                <ArrowUp className="w-6 h-6 group-hover:-translate-y-1 transition-transform" />
+                <ArrowDown className="w-6 h-6 group-hover:-translate-y-1 transition-transform" />
             ) : (
-                <ArrowDown className="w-6 h-6 group-hover:translate-y-1 transition-transform" />
+                <ArrowUp className="w-6 h-6 group-hover:translate-y-1 transition-transform" />
             )}
         </button>
     );

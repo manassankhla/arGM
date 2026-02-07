@@ -1,8 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function TeamPage() {
   /* ================= Employees Array ================= */
@@ -15,35 +13,10 @@ export default function TeamPage() {
     { image: "/Team-Page-Images/founderfake.jpg", name: "Priya Joshi" },
     { image: "/Team-Page-Images/founderfake.jpg", name: "Dev Patel" },
     { image: "/Team-Page-Images/founderfake.jpg", name: "Sneha Rao" },
-    { image: "/Team-Page-Images/founderfake.jpg", name: "Aman Sharma" },
-    { image: "/Team-Page-Images/founderfake.jpg", name: "Riya Mehta" },
-    { image: "/Team-Page-Images/founderfake.jpg", name: "Karan Singh" },
-    { image: "/Team-Page-Images/founderfake.jpg", name: "Neha Verma" },
-    { image: "/Team-Page-Images/founderfake.jpg", name: "Rahul Jain" },
-    { image: "/Team-Page-Images/founderfake.jpg", name: "Priya Joshi" },
-    { image: "/Team-Page-Images/founderfake.jpg", name: "Dev Patel" },
-    { image: "/Team-Page-Images/founderfake.jpg", name: "Sneha Rao" },
-    { image: "/Team-Page-Images/founderfake.jpg", name: "Rahul Jain" },
-    { image: "/Team-Page-Images/founderfake.jpg", name: "Priya Joshi" },
-    { image: "/Team-Page-Images/founderfake.jpg", name: "Dev Patel" },
-    { image: "/Team-Page-Images/founderfake.jpg", name: "Sneha Rao" },
+ 
   ];
 
-  // Pagination Logic
-  const ITEMS_PER_PAGE = 8;
-  const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = Math.ceil(employees.length / ITEMS_PER_PAGE);
 
-  const currentEmployees = employees.slice(
-    (currentPage - 1) * ITEMS_PER_PAGE,
-    currentPage * ITEMS_PER_PAGE
-  );
-
-  const goToPage = (page: number) => {
-    setCurrentPage(page);
-    // Optional: scroll to top of grid
-    // document.getElementById('team-grid')?.scrollIntoView({ behavior: 'smooth' });
-  };
 
   return (
     <>
@@ -155,7 +128,7 @@ export default function TeamPage() {
 
             {/* Grid: 4 Columns */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-              {currentEmployees.map((emp, index) => (
+              {employees.map((emp, index) => (
                 <div
                   key={index}
                   className="text-center group cursor-pointer"
@@ -184,41 +157,6 @@ export default function TeamPage() {
               ))}
             </div>
 
-            {/* Pagination Controls */}
-            {totalPages > 1 && (
-              <div className="flex justify-center items-center gap-4">
-                <button
-                  onClick={() => goToPage(Math.max(1, currentPage - 1))}
-                  disabled={currentPage === 1}
-                  className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-black hover:text-white disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-gray-400 transition"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
-
-                {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                  <button
-                    key={page}
-                    onClick={() => goToPage(page)}
-                    className={`
-                                w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium transition
-                                ${currentPage === page
-                        ? "bg-black text-white"
-                        : "bg-transparent text-gray-600 hover:bg-gray-200"}
-                            `}
-                  >
-                    {page}
-                  </button>
-                ))}
-
-                <button
-                  onClick={() => goToPage(Math.min(totalPages, currentPage + 1))}
-                  disabled={currentPage === totalPages}
-                  className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-black hover:text-white disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-gray-400 transition"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
-              </div>
-            )}
           </div>
 
         </div>

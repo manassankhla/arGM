@@ -54,7 +54,7 @@ export default function ProjectsPage() {
     <main className="bg-white text-black min-h-screen">
 
       {/* ================= Heading ================= */}
-      <section className="relative h-[65vh] font-heading italic flex items-center justify-center text-center bg-white text-black">
+      <section className="relative h-[65vh] mb-16 font-heading italic flex items-center justify-center text-center bg-white text-black">
 
         <Image
           src="/Blog-Page-Images/Blog.jpg"
@@ -78,94 +78,84 @@ export default function ProjectsPage() {
 
       </section>
       <Container>
-        {/* ================= SEARCH SECTION ================= */}
-        <section className="px-6 py-6">
-          <div className="flex justify-end">
-
-            {/* Expandable Search */}
-            <div className="relative">
-
-              {/* Search Icon Button - Only visible when closed */}
-              {!isSearchOpen && (
-                <button
-                  onClick={() => setIsSearchOpen(true)}
-                  className="
-                    w-12 h-12 
-                    rounded-full 
-                    bg-black 
-                    text-white 
-                    flex items-center justify-center
-                    hover:bg-gray-800
-                    transition-all duration-300
-                    shadow-lg
-                    hover:shadow-xl
-                    hover:scale-110
-                  "
-                  aria-label="Open search"
-                >
-                  <Search className="w-5 h-5" />
-                </button>
-              )}
-
-              {/* Expanded Search Input */}
-              {isSearchOpen && (
-                <div
-                  className="
-                    flex items-center gap-2
-                    animate-in fade-in
-                    duration-300
-                  "
-                >
-                  <div className="relative">
-                    <input
-                      type="text"
-                      id="search-projects"
-                      placeholder="Search projects..."
-                      value={search}
-                      onChange={(e) => setSearch(e.target.value)}
-                      className="
-                        w-64 md:w-80
-                        px-4 py-2
-                        pr-10
-                        border-2 border-black
-                        focus:ring-2 focus:ring-black
-                        focus:outline-none
-                        rounded-full
-                      "
-                      autoFocus
-                    />
-                    <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-                  </div>
-
-                  {/* Close button */}
-                  <button
-                    onClick={() => {
-                      setIsSearchOpen(false);
-                      setSearch(""); // Clear search when closing
-                    }}
-                    className="
-                      w-10 h-10
-                      rounded-full
-                      bg-gray-200
-                      hover:bg-gray-300
-                      flex items-center justify-center
-                      transition-all duration-200
-                    "
-                    aria-label="Close search"
-                  >
-                    <span className="text-xl font-light">×</span>
-                  </button>
-                </div>
-              )}
-
-            </div>
-          </div>
-        </section>
-
         {/* ================= GRID (NO SCROLL) ================= */}
-        <section className="px-6 pb-24">
-          <div
-            className="
+        <section className="px-6 pb-32">
+
+          <div className="mx-auto">
+            <div className="flex justify-between items-end mb-14">
+              <h2 className="font-heading italic text-3xl">
+                All Projects
+              </h2>
+
+              {/* ================= SEARCH ================= */}
+              <div className="relative">
+                {!isSearchOpen && (
+                  <button
+                    onClick={() => setIsSearchOpen(true)}
+                    className="
+                      w-12 h-12 
+                      rounded-full 
+                      bg-black 
+                      text-white 
+                      flex items-center justify-center
+                      hover:bg-gray-800
+                      transition-all duration-300
+                      shadow-lg
+                      hover:shadow-xl
+                      hover:scale-110
+                    "
+                    aria-label="Open search"
+                  >
+                    <Search className="w-5 h-5" />
+                  </button>
+                )}
+
+                {isSearchOpen && (
+                  <div className="flex items-center gap-2 animate-in fade-in duration-300">
+                    <div className="relative">
+                      <input
+                        type="text"
+                        placeholder="Search projects..."
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                        className="
+                          w-48 md:w-64
+                          px-4 py-2
+                          pr-10
+                          border-2 border-black
+                          focus:ring-2 focus:ring-black
+                          focus:outline-none
+                          rounded-full
+                        "
+                        autoFocus
+                      />
+                      <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                    </div>
+
+                    <button
+                      onClick={() => {
+                        setIsSearchOpen(false);
+                        setSearch("");
+                      }}
+                      className="
+                        w-10 h-10
+                        rounded-full
+                        bg-gray-200
+                        hover:bg-gray-300
+                        flex items-center justify-center
+                        transition-all duration-200
+                      "
+                      aria-label="Close search"
+                    >
+                      <span className="text-xl font-light">×</span>
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <div
+              className="
             grid
             grid-cols-1
             md:grid-cols-2
@@ -173,13 +163,13 @@ export default function ProjectsPage() {
             xl:grid-cols-3
             gap-6
           "
-          >
+            >
 
-            {filteredProjects.map((item, index) => (
-              <div
-                key={index}
-                onClick={() => openModal(index)}
-                className="
+              {filteredProjects.map((item, index) => (
+                <div
+                  key={index}
+                  onClick={() => openModal(index)}
+                  className="
                 relative
                 h-[520px]
                 rounded-2xl
@@ -188,42 +178,43 @@ export default function ProjectsPage() {
                 cursor-pointer
                 bg-cover bg-center
               "
-                style={{ backgroundImage: `url(${item.image})` }}
-              >
+                  style={{ backgroundImage: `url(${item.image})` }}
+                >
 
-                {/* Dark overlay */}
-                <div className="absolute inset-0 bg-black/60 group-hover:bg-black/75 transition duration-500" />
+                  {/* Dark overlay */}
+                  <div className="absolute inset-0 bg-black/60 group-hover:bg-black/75 transition duration-500" />
 
 
 
-                {/* Content on image */}
-                <div className="absolute inset-0 flex flex-col justify-end p-6 z-10">
+                  {/* Content on image */}
+                  <div className="absolute inset-0 flex flex-col justify-end p-6 z-10">
 
-                  <p className="text-xs tracking-widest uppercase text-gray-300 mb-2">
-                    {item.date}
-                  </p>
+                    <p className="text-xs tracking-widest uppercase text-gray-300 mb-2">
+                      {item.date}
+                    </p>
 
-                  <h3 className="font-heading text-white italic text-xl mb-2">
-                    {item.title}
-                  </h3>
+                    <h3 className="font-heading text-white italic text-xl mb-2">
+                      {item.title}
+                    </h3>
 
-                  <p className="text-sm text-gray-300">
-                    {item.desc}
-                  </p>
+                    <p className="text-sm text-gray-300">
+                      {item.desc}
+                    </p>
+
+                  </div>
+
+
+
+                  {/* Zoom effect */}
+                  <div className="absolute inset-0 bg-cover bg-center scale-100 group-hover:scale-110 transition duration-700 -z-10"
+                    style={{ backgroundImage: `url(${item.image})` }} />
 
                 </div>
+              ))}
 
-
-
-                {/* Zoom effect */}
-                <div className="absolute inset-0 bg-cover bg-center scale-100 group-hover:scale-110 transition duration-700 -z-10"
-                  style={{ backgroundImage: `url(${item.image})` }} />
-
-              </div>
-            ))}
+            </div>
 
           </div>
-
         </section>
       </Container>
 

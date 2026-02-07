@@ -42,8 +42,7 @@ export default function NavbarMenu() {
             fixed inset-0 -z-10
             bg-[url('/hamburger.jpg')]
             bg-no-repeat
-            bg-contain bg-center
-            md:bg-cover md:bg-center
+            bg-cover bg-center
           "
         />
 
@@ -100,7 +99,7 @@ export default function NavbarMenu() {
 
               <h2 className="text-lg md:text-xl font-bold text-white tracking-widest">
                 CONTACT US
-              </h2> 
+              </h2>
 
               <p className="text-sm md:text-base">
                 Head Office:{" "}
@@ -130,19 +129,34 @@ export default function NavbarMenu() {
                   <span>Design Services</span>
                   <span>:</span>
                   <span className="text-white hover:underline cursor-pointer">
+                   <a
+                    href="https://mail.google.com/mail/?view=cm&to=design@architect.com"
+                    target="_blank"
+                  >
                     design@architect.com
+                  </a>
                   </span>
 
                   <span>Career</span>
                   <span>:</span>
                   <span className="text-white hover:underline cursor-pointer">
+                   <a
+                    href="https://mail.google.com/mail/?view=cm&to=career@architect.com"
+                    target="_blank"
+                  >
                     career@architect.com
+                  </a>
                   </span>
 
                   <span>Media & Press</span>
                   <span>:</span>
                   <span className="text-white hover:underline cursor-pointer">
+                   <a
+                    href="https://mail.google.com/mail/?view=cm&to=media@architect.com"
+                    target="_blank"
+                  >
                     media@architect.com
+                  </a>
                   </span>
 
                 </div>

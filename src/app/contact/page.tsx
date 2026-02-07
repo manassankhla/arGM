@@ -1,28 +1,29 @@
 import Container from "@/components/container";
 import Image from "next/image";
+import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 
 export default function Contact() {
     return (
         <main className="bg-[#f5f5f5]">
-             <section className="relative h-[65vh] flex items-center justify-center text-center">
-            
-                    <Image
-                      src="/Blog-Page-Images/blog.jpg"   // same blog image reused
-                      alt="Awards Hero"
-                      fill
-                      className="object-cover"
-                    />
-            
-                    <div className="relative z-10 px-6">
-                      <h1 className="text-6xl md:text-7xl font-heading italic tracking-wide mb-6">
+            <section className="relative h-[65vh] flex items-center justify-center text-center">
+
+                <Image
+                    src="/Blog-Page-Images/blog.jpg"   // same blog image reused 
+                    alt="Awards Hero"
+                    fill
+                    className="object-cover"
+                />
+
+                <div className="relative z-10 px-6">
+                    <h1 className="text-6xl md:text-7xl font-heading italic tracking-wide mb-6">
                         Contact Us
-                      </h1>
-            
-                      <p className="font-body text-sm tracking-[3px] uppercase text-gray-700">
+                    </h1>
+
+                    <p className="font-body text-sm tracking-[3px] uppercase text-gray-700">
                         Recognition • Achievements • Milestones
-                      </p>
-                    </div>
-                  </section>
+                    </p>
+                </div>
+            </section>
 
             {/* ================= TOP SECTION ================= */}
             <section className="py-24">
@@ -69,15 +70,30 @@ export default function Contact() {
 
                                 <div>
                                     <p className="font-heading italic mb-2">Email</p>
-                                    <p className="text-gray-500">hello@yourmail.com</p>
+                                    <p className="text-gray-500"><a
+                                        href="https://mail.google.com/mail/?view=cm&to=contact@example.com"
+                                        target="_blank"
+                                    >
+                                        contact@example.com
+                                    </a>
+                                    </p>
                                 </div>
 
                                 <div>
                                     <p className="font-heading italic mb-2">Social network</p>
                                     <div className="flex gap-4 text-gray-500">
-                                        <span>Fb</span>
-                                        <span>In</span>
-                                        <span>Tw</span>
+                                        <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center text-black cursor-pointer hover:bg-black hover:text-white transition-all shadow-sm">
+                                            <Facebook className="w-4 h-4" />
+                                        </div>
+                                        <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center text-black cursor-pointer hover:bg-black hover:text-white transition-all shadow-sm">
+                                            <Linkedin className="w-4 h-4" />
+                                        </div>
+                                        <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center text-black cursor-pointer hover:bg-black hover:text-white transition-all shadow-sm">
+                                            <Twitter className="w-4 h-4" />
+                                        </div>
+                                        <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center text-black cursor-pointer hover:bg-black hover:text-white transition-all shadow-sm">
+                                            <Instagram className="w-4 h-4" />
+                                        </div>
                                     </div>
                                 </div>
 
