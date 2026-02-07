@@ -1,5 +1,6 @@
 import Container from "../container";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function BrandIntroduction() {
   return (
@@ -45,7 +46,8 @@ export default function BrandIntroduction() {
             </p>
             {/* Button */}
             <div className="flex justify-start md:justify-left mt-6 md:mt-10 mb-5">
-              <button
+              <Link
+                href="/about"
                 className="
       inline-flex items-center
       h-[64px]
@@ -65,7 +67,7 @@ export default function BrandIntroduction() {
                 <span className="transition-transform duration-300 group-hover:rotate-45">
                   ↗
                 </span>
-              </button>
+              </Link>
             </div>
           </div>
           {/* RIGHT IMAGE STACK */}

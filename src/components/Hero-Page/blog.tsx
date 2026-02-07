@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Container from "@/components/container";
 
 export default function Blogs() {
@@ -86,7 +87,8 @@ export default function Blogs() {
           {/* ================= Button ================= */}
           {/* Button */}
           <div className="flex justify-center mt-10 mb-5">
-            <button
+            <Link
+              href="/blogs"
               className="
       inline-flex items-center
       h-[64px]
@@ -106,7 +108,7 @@ export default function Blogs() {
               <span className="transition-transform duration-300 group-hover:rotate-45">
                 ↗
               </span>
-            </button>
+            </Link>
           </div>
 
         </div>

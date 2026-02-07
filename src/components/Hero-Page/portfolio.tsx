@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Container from "../container";
 
 export default function Portfolio() {
@@ -79,7 +80,8 @@ export default function Portfolio() {
 
           {/* Button */}
           <div className="flex justify-center mt-10 mb-5">
-            <button
+            <Link
+              href="/projects"
               className="
       inline-flex items-center
       h-[64px]
@@ -99,7 +101,7 @@ export default function Portfolio() {
               <span className="transition-transform duration-300 group-hover:rotate-45">
                 ↗
               </span>
-            </button>
+            </Link>
           </div>
         </div>
       </Container>
