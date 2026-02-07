@@ -1,7 +1,7 @@
 export default function TermsAndConditions() {
   return (
     
-    <main className="bg-white text-black min-h-screen">
+    <main className="bg-gray-500 text-black min-h-screen">
 
       {/* Top spacing like big brands */}
       <div className="max-w-5xl mx-auto px-6 md:px-10 py-24">

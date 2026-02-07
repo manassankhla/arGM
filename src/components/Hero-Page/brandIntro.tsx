@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function BrandIntroduction() {
   return (
 
-    <section id="brand-intro" className="relative bg-white py-6 md:py-8 lg:py-10 overflow-hidden px-4 md:px-6 lg:px-8">
+    <section id="brand-intro" className="relative bg-white pt-24 pb-6 md:py-8 lg:py-10 overflow-hidden px-4 md:px-6 lg:px-8">
       {/* Background Logo */}
       <Container>
         <div className="absolute top-20 left-30 w-[200px] sm:w-[300px] md:w-[400px] lg:w-[460px] opacity-80 pointer-events-none select-none z-0 transform -translate-x-1/4 -translate-y-1/4">
@@ -71,7 +71,7 @@ export default function BrandIntroduction() {
             </div>
           </div>
           {/* RIGHT IMAGE STACK */}
-          <div className="relative w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-[550px] aspect-[4/5] mx-auto mt-10 md:mt-0">
+          <div className="relative w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-[550px] aspect-4/5 mx-auto mt-10 md:mt-0">
 
             {/* MAIN LEFT IMAGE (TALL) */}
             <div className="absolute left-0 top-[10%] w-[65%] h-[65%] z-10 rounded-[32px] overflow-hidden shadow-md">

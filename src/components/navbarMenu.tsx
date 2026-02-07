@@ -20,7 +20,7 @@ export default function NavbarMenu() {
           ${open ? "opacity-0 pointer-events-none" : "opacity-100"}
         `}
       >
-        <Image src="/hamburgerLogo.svg" alt="menu" width={32} height={22} />
+        <Image src="/hamburgerLogoWhite.svg" alt="menu" width={32} height={22} />
       </button>
 
 

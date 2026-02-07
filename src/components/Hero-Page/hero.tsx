@@ -23,12 +23,12 @@ export default function Hero() {
                 />
 
                 {/* TEXT */}
-                <div className="absolute bottom-40 left-1/2 -translate-x-1/2 z-20 px-6 text-center text-white max-w-4xl">
-                    <h1 className="font-heading italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                <div className="absolute bottom-40 left-1/2 -translate-x-1/2 z-20 px-6 text-center text-white w-full max-w-4xl lg:max-w-full">
+                    <h1 className="font-heading italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl whitespace-normal lg:whitespace-nowrap">
                         ARGM Architecture Beyond Boundaries
                     </h1>
 
-                    <p className="mt-4 font-body text-sm sm:text-base text-gray-200">
+                    <p className="mt-4 font-body text-sm sm:text-base text-gray-200 max-w-2xl mx-auto">
                         Where Vision Meets Form. Crafting signature architectural and spatial
                         experiences that blend context, creativity, and human connection.
                     </p>

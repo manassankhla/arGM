@@ -137,20 +137,16 @@ export default function AwardsPage() {
       <section className="relative h-[65vh] font-heading italic flex items-center justify-center text-center bg-white text-black">
 
         <Image
-          src="/Blog-Page-Images/Blog.jpg"
+          src="/universalHeroImage.jpg"
           alt="Awards Hero"
           fill
           className="object-cover"
         />
 
         <div className="relative z-10 px-6">
-          <h1 className="text-6xl text-black md:text-7xl font-serif tracking-wide mb-6">
+          <h1 className="text-6xl font-heading italic text-white md:text-7xl font-serif tracking-wide mb-6">
             Our Awards
           </h1>
-
-          <p className="text-sm tracking-[3px] uppercase text-gray-200">
-            Celebrating Excellence in Design & Innovation
-          </p>
         </div>
 
 

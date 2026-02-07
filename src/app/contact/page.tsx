@@ -7,21 +7,17 @@ export default function Contact() {
         <main className="bg-[#f5f5f5]">
             <section className="relative h-[65vh] flex items-center justify-center text-center">
 
-                <Image
-                    src="/Blog-Page-Images/blog.jpg"   // same blog image reused 
-                    alt="Awards Hero"
-                    fill
-                    className="object-cover"
-                />
+              <Image
+              src="/universalHeroImage.jpg"
+              alt="Contact"
+              fill
+              className="object-cover"
+              />
 
                 <div className="relative z-10 px-6">
-                    <h1 className="text-6xl md:text-7xl font-heading italic tracking-wide mb-6">
+                    <h1 className="text-6xl md:text-7xl text-white font-heading italic tracking-wide mb-6">
                         Contact Us
                     </h1>
-
-                    <p className="font-body text-sm tracking-[3px] uppercase text-gray-700">
-                        Recognition • Achievements • Milestones
-                    </p>
                 </div>
             </section>
 

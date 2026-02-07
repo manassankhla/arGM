@@ -1,30 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import Container from "../container";
+import { projects } from "@/data/projects";
 
 export default function Portfolio() {
-  const projects = [
-    {
-      title: "Elegance and Minimalism",
-      location: "MUMBAI, MAHARASHTRA",
-      image: "/Hero-Page-Images/portfolio/img1.png",
-    },
-    {
-      title: "Innovation and Creativity",
-      location: "BENGALURU, KARNATAKA",
-      image: "/Hero-Page-Images/portfolio/img2.png",
-    },
-    {
-      title: "Aqua Vista Tower",
-      location: "CHENNAI, TAMIL NADU",
-      image: "/Hero-Page-Images/portfolio/img3.png",
-    },
-    {
-      title: "EcoTech Hub",
-      location: "HYDERABAD, TELANGANA",
-      image: "/Hero-Page-Images/portfolio/img4.png",
-    },
-  ];
+
 
   return (
     <section className="relative bg-white overflow-hidden py-6 md:py-8 lg:py-10">
@@ -56,25 +36,24 @@ export default function Portfolio() {
 
           {/* Grid */}
           <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12">
-            {projects.map((item, index) => (
-              <div key={index} className="group">
-                <div>
+            {projects.slice(0, 4).map((item, index) => (
+              <Link href={`/projects/${item.id}`} key={index} className="group block">
+                <div className="overflow-hidden rounded-2xl relative w-full h-[420px]">
                   <Image
                     src={item.image}
                     alt={item.title}
-                    width={600}
-                    height={420}
-                    className="object-cover rounded-2xl w-full h-full transition-transform duration-500 group-hover:scale-105"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
 
                 <h3 className="mt-5 font-heading text-black italic text-xl">
                   {item.title}
                 </h3>
-                <p className="text-xs tracking-wide text-gray-500 mt-1">
-                  {item.location}
+                <p className="text-xs tracking-wide text-gray-500 mt-1 uppercase">
+                  {item.desc}
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
 
